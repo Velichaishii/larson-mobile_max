@@ -2,15 +2,81 @@
 
 {% block pageTitle %}Главная страница{% endblock %}
 
-<style>
-    .hello {
-        border: 2px solid #ffaaaa;
-    }
-</style>
 
 {% block content %}
-    <div class="logo"><i class="fri fri-qube-logo"></i></div>
-    <li class="hello"></li>
-    <li class="hello"></li>
-    <li class="hello"></li>
+    <section class="owl-carousel slider">
+        <div class="slider__item slide">
+            <i class="slide__bg" style="background: url(images/slide-1.jpg) no-repeat center center; background-size: cover"></i>
+            <div class="slide__mask"></div>
+            <div class="slide__content content">
+                <div class="container">
+                    <h2 class="content__header">Бездепозитные счета</h2>
+                    <p class="content__text-small">Уникальный сервис позволяющий<br>
+                        получить стартовый  капитал<br>
+                        для начинающих трейдеров</p>
+                    <p class="content__text-box">
+                        <i class="content__icon icon check"></i>
+                        <span class="content__text-medium">Торговля без вложений и риска</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slider__item slide">
+            <i class="slide__bg" style="background: url(images/slide-2.jpg) no-repeat center center; background-size: cover"></i>
+            <div class="slide__mask"></div>
+            <div class="slide__content content">
+                <div class="container">
+                    <h2 class="content__header">Бинарные опционы</h2>
+                    <p class="content__text-small">Наши новейшие технологии –<br>
+                        для Вашего моментального результата</p>
+                    <p class="content__text-box">
+                        <i class="content__icon icon check"></i>
+                        <span class="content__text-medium">Воспользуйтесь возможностью сделать максимально успешный старт</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slider__item slide">
+            <i class="slide__bg" style="background: url(images/slide-3.jpg) no-repeat center center; background-size: cover"></i>
+            <div class="slide__mask"></div>
+            <div class="slide__content content">
+                <div class="container">
+                    <h2 class="content__header">Классический Форекс</h2>
+                    <p class="content__text-small">Качественный сервис на рынке Форекс и CFD контрактов проверенный временем</p>
+                    <p class="content__text-box">
+                        <i class="content__icon icon check"></i>
+                        <span class="content__text-medium">Этот сервис выбирают миллионы трейдеров  со всего мира</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slider__item slide">
+            <i class="slide__bg" style="background: url(images/slide-4.jpg) no-repeat center center; background-size: cover"></i>
+            <div class="slide__mask"></div>
+            <div class="slide__content content">
+                <div class="container">
+                    <h2 class="content__header">NDD/ECN счета</h2>
+                    <p class="content__text-small">Прямой доступ к межбанковской ликвидности по технологии STP  и Direct Memory Access (DMA)</p>
+                    <p class="content__text-box">
+                        <i class="content__icon icon check"></i>
+                        <span class="content__text-medium">Оптимальное решение<br> для алгоритмического  трейдинга</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slider__item slide">
+            <i class="slide__bg" style="background: url(images/slide-5.jpg) no-repeat center center; background-size: cover"></i>
+            <div class="slide__mask"></div>
+            <div class="slide__content content">
+                <div class="container">
+                    <h2 class="content__header">Стать партнером</h2>
+                    <p class="content__text-small">Отдел развития Larson&Holz Ltd делает Вам уникальное предложение</p>
+                    <p class="content__text-box">
+                        <i class="content__icon icon check"></i>
+                        <span class="content__text-medium">Стань партнёром и начни зарабатывать от 10 000$ пассивного дохода в месяц</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

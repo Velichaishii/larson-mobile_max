@@ -134,9 +134,17 @@
     });
 
     app.appLoad('full', function (e) {
-        console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
-        // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
-        // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+        $('.burger__btn').click(function(){
+            $(this).toggleClass('open');
+        });
+        $('.slider').owlCarousel(
+            {
+                items: 1,
+                nav: false,
+                dots: true,
+                autoHeight: true
+            }
+        );
     });
 
 })();

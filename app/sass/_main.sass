@@ -1,14 +1,223 @@
-html, body
-  margin: 0
-  height: 100%
+@import "mixins/mixins"
 
-body
-  box-shadow: inset 0 0 500px
 
-.logo
-  left: 50%
-  margin-left: -37.5px
-  margin-top: -39.5px
-  position: absolute
-  top: 50%
-  font-size: 0
+
+.header
+    height: 65px
+    padding: 20px 0
+    background: #fff
+    border-bottom: 1px solid #ededed
+    +box-shadow(0 3px 0 0 #0771bd)
+    +box-sizing(border-box)
+    .header__list
+        display: flex
+        justify-content: space-between
+        align-items: stretch
+    .header__item
+        display: flex
+        width: auto
+        align-items: center
+        font-size: 14px
+        +box-sizing(border-box)
+
+    .burger
+        &__bth
+            display: inline-block
+            width: 28px
+            height: 22px
+            padding: 0
+            background: none
+            border: none
+            cursor: pointer
+            outline: none
+            margin-bottom: 3px
+        &__line
+            display: block
+            width: 100%
+            height: 3px
+            background: #168de2
+            margin-bottom: 6px
+            +border-radius(2px)
+            +transition(all 0.3s ease 0s)
+            &:last-child
+                margin-bottom: 0
+
+    .shield
+        &__link
+            position: relative
+        &__line
+            display: block
+            width: 16px
+            height: 5px
+            background: #fff
+            position: absolute
+            top: 13px
+            left: 50%
+            &_horiz
+                +transform(translateX(-50%))
+            &_vert
+                +transform(translateX(-50%) rotate(90deg))
+
+    .lang
+        &__text
+            text-transform: uppercase
+            font-family: OpenSans
+            color: #808080
+
+.owl-carousel
+    &.slider
+        border-top: 2px solid #0771bd
+        .slider__item
+            position: relative
+    .slide
+        .slide__bg
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 0
+        .slide__mask
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 0
+            opacity: 0.85
+            background-image: linear-gradient(to top, rgba(55, 65, 76, 0.38), rgba(55, 65, 76, 0.8))
+        .slide__content
+            width: 100%
+            padding: 20px 0 50px 0
+            position: relative
+            z-index: 10
+        .content
+            text-align: center
+            color: #fff
+            font-family: OpenSans
+            &__header
+                margin-bottom: 20px
+                font-size: 18px
+                font-weight: 600
+            &__text-small
+                margin-bottom: 20px
+                line-height: 18px
+                font-size: 12px
+            &__text-box
+                display: flex
+                padding: 0 10px 0 20px
+                align-items: center
+                justify-content: center
+                font-size: 0
+            &__icon
+                flex: 0 0 auto
+            &__text-medium
+                flex: 0 1 auto
+                margin-left: 10px
+                text-align: left
+                line-height: 22px
+                font-size: 14px
+
+.footer
+    padding-bottom: 20px
+    background-color: #28313e
+    &__item
+        padding: 0 40px
+        margin-bottom: 20px
+        &:first-child
+            padding: 0
+        &:last-child
+            margin-bottom: 0
+
+    .copyright
+        &__text
+            text-align: center
+            font-family: OpenSans
+            font-size: 13px
+            line-height: 1.69
+            color: #fbfbfb
+
+    .soc
+        &__list
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__item
+            font-size: 25px
+            color: #fbfbfb
+
+
+.burger-menu
+    width: 270px
+    height: 100%
+    background: #f2f2f2
+    border-top: 4px solid #fe7d1b
+    position: fixed
+    top: 65px
+    left: 0
+    z-index: 10
+    .authorization
+        padding: 10px
+        background-color: #0771bd
+        &__list
+            font-size: 0
+        &__item
+            padding: 0 10px
+            display: inline-block
+            position: relative
+            font-size: 16px
+            &:after
+                content: ""
+                display: block
+                width: 1px
+                height: 15px
+                background-color: #fff
+                position: absolute
+                top: 50%
+                right: 0
+                +transform(translateY(-50%))
+            &:first-child
+                padding-left: 0
+            &:last-child
+                padding-right: 0
+                &:after
+                    display: none
+        &__icon
+            margin-right: 10px
+        &__link
+            display: inline-block
+            vertical-align: middle
+            text-decoration: none
+            font-family: OpenSans
+            color: #fff
+
+    .nav
+        &__row
+            border-bottom: 1px solid #e8e8e8
+            font-size: 0
+        &__link
+            display: inline-flex
+            vertical-align: top
+            width: calc(100% - 50px)
+            min-height: 50px
+            padding: 0 0 0 50px
+            position: relative
+            align-items: center
+            font-size: 18px
+            +box-sizing(border-box)
+        &__icon
+            display: flex
+            width: 50px
+            height: 50px
+            position: absolute
+            left: 0
+            top: 0
+            align-items: center
+            justify-content: center
+        &__toggle
+            display: inline-flex
+            vertical-align: top
+            width: 50px
+            height: 50px
+            position: relative
