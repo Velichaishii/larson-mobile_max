@@ -134,9 +134,13 @@
     });
 
     app.appLoad('full', function (e) {
-        $('.burger__btn').click(function(){
-            $(this).toggleClass('open');
-        });
+        var burgerBtn = $('.header  .burger__bth');
+        var burgerMenu = $('.burger-menu');
+        var wrapOver = $('.wrap__overlay');
+        var navToggle = $('.burger-menu .nav__toggle');
+        var langToggle= $('.lang__toggle');
+        var langDD= $('.lang-dropdown');
+
         $('.slider').owlCarousel(
             {
                 items: 1,
@@ -145,6 +149,49 @@
                 autoHeight: true
             }
         );
-    });
 
+        burgerBtn.click(function () {
+            if (burgerMenu.hasClass('open')) {
+                burgerMenu.removeClass('open');
+                burgerBtn.removeClass('active');
+                wrapOver.stop().fadeOut(300);
+            }
+            else {
+                burgerMenu.addClass('open');
+                burgerBtn.addClass('active');
+                wrapOver.stop().fadeIn(300);
+            }
+        });
+
+        $(wrapOver).click(function () {
+            wrapOver.stop().fadeOut(300);
+            burgerMenu.removeClass('open');
+            burgerBtn.removeClass('active');
+        });
+
+        navToggle.click(function () {
+            var navListDD = $(this).closest('.nav__item').find('.nav__list_dropdown');
+            var navItem = $(this).closest('.nav__item');
+
+            if (navItem.hasClass('dropdown-open')) {
+                navListDD.stop().slideUp(300);
+                navItem.removeClass('dropdown-open');
+            }
+            else {
+                navListDD.stop().slideDown('300');
+                navItem.addClass('dropdown-open');
+            }
+        });
+
+        langToggle.click(function () {
+            if (langToggle.hasClass('active')) {
+                langToggle.removeClass('active');
+                langDD.stop().fadeOut(300);
+            }
+            else {
+                langDD.stop().fadeIn(300);
+                langToggle.addClass('active');
+            }
+        })
+    });
 })();

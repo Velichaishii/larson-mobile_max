@@ -2,83 +2,223 @@
 
 
 
+.wrap
+    width: 100%
+    min-width: 320px
+    height: 100%
+    padding-top: 65px
+    position: relative
+    overflow: hidden
+    &__overlay
+        display: none
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.5)
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 90
+
+
+
 .header
-    height: 65px
-    padding: 20px 0
-    background: #fff
+    width: 100%
+    padding: 16px 0 12px 0
+    background-color: #fff
     border-bottom: 1px solid #ededed
+    position: fixed
+    top: 0
+    z-index: 100
     +box-shadow(0 3px 0 0 #0771bd)
     +box-sizing(border-box)
-    .header__list
+    &__list
         display: flex
         justify-content: space-between
         align-items: stretch
-    .header__item
+    &__item
         display: flex
         width: auto
+        position: relative
         align-items: center
         font-size: 14px
         +box-sizing(border-box)
+.burger
+    &__bth
+        display: inline-block
+        width: 28px
+        height: 22px
+        padding: 0
+        margin-bottom: 3px
+        background: none
+        border: none
+        position: relative
+        cursor: pointer
+        outline: none
+        &.active
+            .burger__line
+                &:first-child
+                    left: 0
+                    top: 9px
+                    opacity: 0
+                &:nth-child(2)
+                    +transform(rotate(45deg))
+                &:nth-child(3)
+                    +transform(rotate(-45deg))
+                &:last-child
+                    left: 0
+                    top: 9px
+                    opacity: 0
+    &__line
+        display: block
+        width: 100%
+        height: 3px
+        position: absolute
+        background-color: #168de2
+        +border-radius(2px)
+        +transition(all 0.3s ease 0s)
+        &:first-child
+            left: 0
+            top: 0
+        &:nth-child(2)
+            left: 0
+            top: 9px
+        &:nth-child(3)
+            left: 0
+            top: 9px
+        &:last-child
+            left: 0
+            top: 18px
 
-    .burger
-        &__bth
-            display: inline-block
-            width: 28px
-            height: 22px
-            padding: 0
-            background: none
-            border: none
-            cursor: pointer
-            outline: none
-            margin-bottom: 3px
-        &__line
-            display: block
-            width: 100%
-            height: 3px
-            background: #168de2
-            margin-bottom: 6px
-            +border-radius(2px)
-            +transition(all 0.3s ease 0s)
-            &:last-child
-                margin-bottom: 0
+.logo
+    &__link
+        position: relative
+    &__line
+        display: block
+        width: 16px
+        height: 5px
+        background-color: #fff
+        position: absolute
+        top: 13px
+        left: 50%
+        &_horiz
+            +transform(translateX(-50%))
+        &_vert
+            +transform(translateX(-50%) rotate(90deg))
+.lang
+    &__toggle
+        display: flex
+        width: 50px
+        height: 26px
+        background-color: #f7f7f7
+        border-radius: 3px
+        position: relative
+        z-index: 10
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        &.active
+            background-color: transparent
+    &__text
+        display: inline-block
+        vertical-align: middle
+        margin-left: 5px
+        text-transform: uppercase
+        font-family: OpenSans
+        color: #808080
+    &__dropdown
+        display: none
+        position: absolute
 
-    .shield
-        &__link
-            position: relative
-        &__line
-            display: block
-            width: 16px
-            height: 5px
-            background: #fff
-            position: absolute
-            top: 13px
-            left: 50%
-            &_horiz
-                +transform(translateX(-50%))
-            &_vert
-                +transform(translateX(-50%) rotate(90deg))
-
-    .lang
-        &__text
-            text-transform: uppercase
-            font-family: OpenSans
-            color: #808080
+.lang-dropdown
+    width: 234px
+    padding: 5px 10px
+    background-color: #fff
+    border: solid 1px #ededed
+    border-radius: 3px
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2)
+    top: calc(100% + 5px)
+    right: 0
+    +box-sizing(border-box)
+    &:before
+        content: ""
+        display: block
+        width: 50px
+        height: 42px
+        background-color: #fff
+        border: solid 1px #ededed
+        border-radius: 3px
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2)
+        position: absolute
+        top: -40px
+        right: -1px
+        +box-sizing(border-box)
+    &:after
+        content: ""
+        display: block
+        width: 51px
+        height: 10px
+        background-color: #fff
+        position: absolute
+        top: -0px
+        right: 0
+        +box-sizing(border-box)
+    &__list
+        font-size: 0
+    &__item
+        display: inline-block
+        margin: 7px 0
+        width: 55%
+        padding-right: 10px
+        font-size: 14px
+        +box-sizing(border-box)
+        &:nth-child(2n)
+            width: 45%
+            padding-right: 0
+    &__text
+        display: inline-block
+        vertical-align: middle
+        font-family: OpenSans
+        font-size: 14px
+        line-height: 1.43em
+        color: #168de2
 
 .owl-carousel
     &.slider
         border-top: 2px solid #0771bd
         .slider__item
             position: relative
-    .slide
-        .slide__bg
+        .owl-dots
             display: block
+            width: 100%
+            position: absolute
+            bottom: 15px
+            text-align: center
+        .owl-dot
+            display: inline-block
+            margin-right: 10px
+            &:last-child
+                margin-right: 0
+            span
+                display: block
+                width: 8px
+                height: 8px
+                background-color: rgba(255, 255, 255, 0.6)
+                border: 1px solid #0771bd
+                +border-radius(50%)
+        .owl-dot
+            &.active
+                span
+                    background-color: #168de2
+                    border: solid 1px #0771bd
+    .slide
+        &__bg
             width: 100%
             height: 100%
             position: absolute
             top: 0
             left: 0
             z-index: 0
-        .slide__mask
+        &__mask
             width: 100%
             height: 100%
             position: absolute
@@ -87,37 +227,266 @@
             z-index: 0
             opacity: 0.85
             background-image: linear-gradient(to top, rgba(55, 65, 76, 0.38), rgba(55, 65, 76, 0.8))
-        .slide__content
-            width: 100%
+        &__content
             padding: 20px 0 50px 0
             position: relative
             z-index: 10
-        .content
-            text-align: center
-            color: #fff
-            font-family: OpenSans
-            &__header
-                margin-bottom: 20px
-                font-size: 18px
-                font-weight: 600
-            &__text-small
-                margin-bottom: 20px
-                line-height: 18px
-                font-size: 12px
-            &__text-box
-                display: flex
-                padding: 0 10px 0 20px
-                align-items: center
-                justify-content: center
-                font-size: 0
-            &__icon
-                flex: 0 0 auto
-            &__text-medium
-                flex: 0 1 auto
-                margin-left: 10px
-                text-align: left
-                line-height: 22px
-                font-size: 14px
+    .slide-content
+        text-align: center
+        color: #fff
+        font-family: OpenSans
+        &__header
+            margin-bottom: 20px
+            font-family: OpenSans-Semibold
+            font-size: 18px
+        &__text-small
+            margin-bottom: 20px
+            line-height: 18px
+            font-size: 12px
+        &__text-box
+            display: flex
+            padding: 0 10px 0 20px
+            align-items: center
+            justify-content: center
+            font-size: 0
+        &__icon
+            flex: 0 0 auto
+        &__text-medium
+            flex: 0 1 auto
+            margin-left: 10px
+            text-align: left
+            line-height: 22px
+            font-size: 14px
+
+.main
+    background-color: #f7f8fa
+
+.honor
+    padding: 20px 0
+    text-align: center
+    .h2
+        margin-bottom: 5px
+    &__header
+        margin-bottom: 10px
+        font-family: OpenSans-Semibold
+        font-size: 30px
+    &__amp
+        color: #0771bd
+    &__text
+        margin-bottom: 20px
+        font-family: OpenSans-Light
+        font-size: 14px
+        color: #4d4d4d
+    &__grid
+        padding: 0 20px
+        font-size: 0
+    &__item
+        display: inline-block
+        vertical-align: middle
+        width: 50%
+        padding: 0 20px
+        text-transform: uppercase
+        font-family: OpenSans
+        font-size: 12px
+        color: #4d4d4d
+        +box-sizing(border-box)
+    &__img
+        width: 69px
+        height: 80px
+.content-section
+    padding: 15px 0
+    margin-bottom: 15px
+    background: #fff
+    +border-radius(5px)
+    +box-shadow(0 0 3px 0 rgba(77, 77, 77, 0.2))
+    &_pb-0
+        padding-bottom: 0
+    .content-section__header
+        padding: 0 15px
+        text-align: center
+        .h2
+            margin-bottom: 15px
+.news-counter
+    text-align: center
+    &__link
+        display: inline-block
+        margin-bottom: 10px
+        text-decoration: none
+        font-family: OpenSans-Semibold
+        font-size: 14px
+        font-weight: 600
+        line-height: 1.43em
+        color: #168de2
+.counter
+    text-align: center
+    font-family: OpenSans-Semibold
+    font-size: 30px
+    line-height: 1.07em
+.calendar-eco
+    &__day
+        padding: 5px
+        background-color: #e6e6e6
+        text-align: center
+        font-family: OpenSans-Semibold
+        font-size: 12px
+        line-height: 1.67em
+        color: #4d4d4d
+    &__item
+        font-size: 0
+    &__left-col
+        display: inline-block
+        width: 20%
+        font-size: 14px
+    &__right-col
+        display: inline-block
+        width: 80%
+        font-size: 13px
+    &__time
+        font-family: OpenSans-Semibold
+        font-size: 14px
+        line-height: 1.43
+        color: #1a1a1a
+    &__raiting
+        font-size: 0
+.banner
+    padding: 20px 0
+    margin-bottom: 15px
+    position: relative
+    &__bg
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 0
+    &__mask
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 0
+        opacity: 0.85
+        background-image: linear-gradient(to top, rgba(55, 65, 76, 0.38), rgba(55, 65, 76, 0.8))
+    &__content
+        padding: 0 10px
+        position: relative
+        z-index: 10
+.banner-content
+    color: #fff
+    &__header
+        margin-bottom: 10px
+        text-align: center
+        font-family: OpenSans
+        font-size: 16px
+        font-weight: 600
+        line-height: 1.38em
+    &__text
+        margin-bottom: 20px
+        text-align: center
+        font-family: OpenSans-Semibold
+        font-size: 12px
+        opacity: 0.7
+        color: #ffffff
+.traiders
+    &__list
+        padding: 0 10px
+    &__item
+        display: block
+        padding: 15px 0 5px 0
+        background-color: #fbfbfb
+        border-top: solid 1px #f2f2f2
+        font-size: 0
+    &__left-col
+        display: inline-block
+        vertical-align: top
+        width: 7%
+        font-family: Roboto-Regular
+        font-size: 15px
+        color: #4d4d4d
+    &__right-col
+        display: inline-block
+        vertical-align: top
+        width: 93%
+        font-size: 0
+    &__left-cell
+        display: inline-block
+        vertical-align: top
+        width: 60%
+        min-height: 24px
+        font-size: 18px
+        &_half
+            width: 50%
+    &__right-cell
+        display: inline-block
+        vertical-align: top
+        width: 40%
+        min-height: 24px
+        text-align: right
+        font-size: 18px
+        &_half
+            width: 50%
+    &__text
+        text-transform: uppercase
+        font-family: Roboto-Medium
+        color: #1a1a1a
+        &_big
+            font-size: 18px
+            line-height: 1em
+        &_small
+            font-size: 12px
+            line-height: 2em
+        &_dark-gray
+            color: #4d4d4d
+        &_light-gray
+            color: #808080
+    &__time
+        display: inline-block
+        padding: 2px 6px
+        border-radius: 5px
+        background-color: #168de2
+        text-transform: uppercase
+        text-align: center
+        font-family: Roboto-Regular
+        font-size: 12px
+        line-height: 1.17
+        color: #fff
+.news
+    padding: 0 5px
+    text-align: center
+    &__list
+        text-align: left
+    &__item
+        margin-bottom: 15px
+        font-size: 0
+    &__info
+        margin-bottom: 5px
+    &__date
+        display: inline-block
+        vertical-align: top
+        width: 65px
+        font-family: OpenSans
+        font-size: 12px
+        line-height: 1.5em
+        color: #808080
+    &__category
+        display: inline-block
+        width: calc(100% - 65px)
+        padding-left: 10px
+        color: #4d4d4d
+        +box-sizing(border-box)
+        .news__link
+            text-decoration: underline
+            font-size: 12px
+            line-height: 1.5em
+            color: #4d4d4d
+    &__link
+        text-decoration: none
+        font-family: OpenSans
+        font-size: 13px
+        font-weight: 600
+        line-height: 1.23em
+        color: #168de2
 
 .footer
     padding-bottom: 20px
@@ -129,95 +498,145 @@
             padding: 0
         &:last-child
             margin-bottom: 0
-
-    .copyright
-        &__text
-            text-align: center
-            font-family: OpenSans
-            font-size: 13px
-            line-height: 1.69
-            color: #fbfbfb
-
-    .soc
-        &__list
-            display: flex
-            justify-content: space-between
-            align-items: center
-        &__item
-            font-size: 25px
-            color: #fbfbfb
+.copyright
+    &__text
+        text-align: center
+        font-family: OpenSans
+        font-size: 13px
+        line-height: 1.69em
+        color: #fbfbfb
+.soc
+    &__link
+        color: #fbfbfb
+        &:hover, &:focus, &:active, &:visited
+            &:hover, &:focus, &:active
+                color: #168de2
+    &__list
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__item
+        font-size: 25px
+        color: #fbfbfb
 
 
 .burger-menu
     width: 270px
     height: 100%
-    background: #f2f2f2
+    background-color: #f2f2f2
     border-top: 4px solid #fe7d1b
     position: fixed
     top: 65px
-    left: 0
-    z-index: 10
-    .authorization
-        padding: 10px
-        background-color: #0771bd
-        &__list
-            font-size: 0
-        &__item
-            padding: 0 10px
-            display: inline-block
-            position: relative
-            font-size: 16px
-            &:after
-                content: ""
-                display: block
-                width: 1px
-                height: 15px
-                background-color: #fff
-                position: absolute
-                top: 50%
-                right: 0
-                +transform(translateY(-50%))
-            &:first-child
-                padding-left: 0
-            &:last-child
-                padding-right: 0
-                &:after
-                    display: none
-        &__icon
-            margin-right: 10px
-        &__link
-            display: inline-block
-            vertical-align: middle
-            text-decoration: none
-            font-family: OpenSans
-            color: #fff
-
-    .nav
-        &__row
-            border-bottom: 1px solid #e8e8e8
-            font-size: 0
-        &__link
-            display: inline-flex
-            vertical-align: top
-            width: calc(100% - 50px)
-            min-height: 50px
-            padding: 0 0 0 50px
-            position: relative
-            align-items: center
-            font-size: 18px
-            +box-sizing(border-box)
-        &__icon
-            display: flex
-            width: 50px
-            height: 50px
+    left: -270px
+    z-index: 100
+    overflow-y: auto
+    +transition(all 0.3s ease 0s)
+    &.open
+        left: 0
+    &__footer
+        padding: 25px 20px 20px 20px
+.authorization
+    padding: 10px 12px
+    background-color: #0771bd
+    &__list
+        font-size: 0
+    &__item
+        padding: 0 10px
+        display: inline-block
+        position: relative
+        font-size: 16px
+        &:after
+            content: ""
+            display: block
+            width: 1px
+            height: 15px
+            background-color: #fff
             position: absolute
-            left: 0
-            top: 0
-            align-items: center
-            justify-content: center
-        &__toggle
-            display: inline-flex
-            vertical-align: top
-            width: 50px
-            height: 50px
-            position: relative
+            top: 50%
+            right: 0
+            +transform(translateY(-50%))
+        &:first-child
+            padding-left: 0
+        &:last-child
+            padding-right: 0
+            &:after
+                display: none
+    &__icon
+        margin-right: 12px
+    &__link
+        display: inline-block
+        vertical-align: middle
+        text-decoration: none
+        font-family: OpenSans
+        color: #fff
+.nav
+    &__list
+        &_dropdown
+            display: none
+    &__item
+        &.dropdown-open
+            .nav__arrow
+                +transform(translate(-50%,-50%) rotate(180deg))
+    &__row
+        border-bottom: 1px solid #e8e8e8
+        font-size: 0
+    &__link
+        display: inline-flex
+        vertical-align: top
+        width: calc(100% - 50px)
+        min-height: 50px
+        padding: 10px 10px 10px 50px
+        position: relative
+        align-items: center
+        text-decoration: none
+        font-family: OpenSans-Semibold
+        font-size: 18px
+        color: #4d4d4d
+        +box-sizing(border-box)
+        &_dropdown
+            width: 100%
+            background-color: #fff
+            font-size: 15px
+            font-weight: normal
+    &__icon
+        display: flex
+        width: 50px
+        height: 50px
+        position: absolute
+        left: 0
+        top: 0
+        align-items: center
+        justify-content: center
+    &__toggle
+        display: inline-flex
+        vertical-align: top
+        width: 50px
+        height: 50px
+        position: relative
+    &__arrow
+        height: 8px
+        position: absolute
+        top: 50%
+        left: 50%
+        +transform(translate(-50%,-50%))
+        +transition(all 0.3s ease 0s)
+.service
+    &__item
+        margin-bottom: 15px
+        &:first-child
+            .service__link
+                font-family: Roboto-Regular
+                font-size: 18px
+        &:last-child
+            margin-bottom: 0
+    &__link
+        display: inline-block
+        position: relative
+        padding-left: 35px
+        text-decoration: none
+        font-family: OpenSans
+        font-size: 14px
+        color: #4d4d4d
+    &__icon
+        position: absolute
+        left: 0
