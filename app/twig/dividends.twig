@@ -1,0 +1,790 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Календарь выплаты дивидендов{% endblock %}
+
+{% block content %}
+    <section class="content-wrap">
+        <div class="container">
+            <div class="mb-15">
+                <h2 class="h2">Календарь<br>выплаты дивидендов</h2>
+            </div>
+            <div class="dividends dividends_page">
+                <ul class="content-section__list">
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">1</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">2</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">3</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">4</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">5</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">6</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">7</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">8</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">9</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="content-section__item">
+                        <div class="content-section__left-col">
+                            <span class="badge badge_beige">10</span>
+                        </div>
+                        <div class="content-section__right-col">
+                            <ul class="dividends__list">
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Ticker</span>
+                                            <span class="tt-u ff-r-m fs-18 c-darkest">#Bac</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-5">Popularity</span>
+                                            <span class="badge badge_blue">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray mr-10">Stock</span>
+                                            <span class="tt-u ff-r-m fs-14 c-darkest">Bank of America</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-100">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents</span>
+                                        </div>
+                                    </div>
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-50 dividends__col-50_pl-10">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Stock</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                        <div class="dividends__col-50 dividends__col-50_ta-r">
+                                            <span class="ff-r-i fs-12 c-warm-gray mr-10">1 Contract</span>
+                                            <span class="ff-r-m fs-14 c-darkest">Waiting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dividends__item">
+                                    <div class="dividends__row">
+                                        <div class="dividends__col-25">
+                                            <span class="ff-r-r fs-12 c-warm-gray">Dividents<br>payouts:</span>
+                                        </div>
+                                        <div class="dividends__col-75">
+                                            <div class="counter-signature">
+                                                <ul class="counter-signature__list">
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">дней</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">1</span>
+                                                        <span class="counter-signature__numeral">0</span>
+                                                        <div class="counter-signature__text">часов</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral">2</span>
+                                                        <span class="counter-signature__numeral">5</span>
+                                                        <div class="counter-signature__text">минут</div>
+                                                    </li>
+                                                    <li class="counter-signature__item">
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">4</span>
+                                                        <span class="counter-signature__numeral counter-signature__numeral_c-ls">3</span>
+                                                        <div class="counter-signature__text">секунд</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-20">
+                <button type="button" class="btn btn_blue">Показать ещё</button>
+            </div>
+        </div>
+    </section>
+{% endblock %}

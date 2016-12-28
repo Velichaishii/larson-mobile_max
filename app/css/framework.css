@@ -135,11 +135,161 @@
   color: #808080;
 }
 
-.fs14 {
+.badge {
+  display: inline-block;
+}
+.badge_blue {
+  padding: 2px 6px;
+  border-radius: 5px;
+  background-color: #168de2;
+  text-align: center;
+  font-family: Roboto-Regular;
+  font-size: 12px;
+  line-height: 1.17em;
+  color: #fff;
+}
+.badge_beige {
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: #f7f7f7;
+}
+
+.counter-signature {
+  width: 170px;
+  margin: 0 auto;
+}
+.counter-signature__list {
+  font-size: 0;
+}
+.counter-signature__item {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  position: relative;
+  text-align: center;
+  font-size: 0;
+}
+.counter-signature__item:last-child:after {
+  display: none;
+}
+.counter-signature__item:after {
+  content: ":";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -2px;
+  font-family: OpenSans-Semibold;
+  font-size: 18px;
+}
+.counter-signature__numeral {
+  display: inline-block;
+  margin-bottom: 3px;
+  font-family: OpenSans-Semibold;
+  font-size: 18px;
+}
+.counter-signature__numeral_c-ls {
+  color: #e51c23;
+}
+.counter-signature__text {
+  font-family: Roboto-Regular;
+  font-size: 11px;
+  color: #808080;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.tt-u {
+  text-transform: uppercase;
+}
+
+.ff-os {
+  font-family: OpenSans;
+}
+
+.ff-os-l {
+  font-family: OpenSans-Light;
+}
+
+.ff-os-s {
+  font-family: OpenSans-Semibold;
+}
+
+.ff-r-r {
+  font-family: Roboto-Regular;
+}
+
+.ff-r-m {
+  font-family: Roboto-Medium;
+}
+
+.ff-r-i {
+  font-family: Roboto-Italic;
+}
+
+.fs-0 {
+  font-size: 0;
+}
+
+.fs-11 {
+  font-size: 11px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
   font-size: 14px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.c-darkest {
+  color: #1a1a1a;
+}
+
+.c-warm-gray {
+  color: #808080;
 }
 
 .h2 {
   font-family: OpenSans-Semibold;
   font-size: 16px;
+  line-height: 1.5em;
+}
+
+.triangle-up {
+  display: inline-block;
+  vertical-align: middle;
+  border-bottom: 8px solid #808080;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.triangle-down {
+  display: inline-block;
+  vertical-align: middle;
+  border-top: 8px solid #808080;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
 }
