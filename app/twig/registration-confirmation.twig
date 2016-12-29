@@ -1,0 +1,30 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Подтверждение регистрации{% endblock %}
+
+{% block content %}
+    <section class="content-wrap content-wrap_mb-0">
+        <div class="container">
+            <div class="mb-15">
+                <h2 class="h2 mb-5">Подтверждение регистрации по SMS</h2>
+                <p class="ff-os fs-14 lh-57em c-gr-brown">На номер <span class="ff-os-s ">«79281564534»</span> был отправлен код подтверждения</p>
+            </div>
+            <div class="content-main">
+                <form method="post">
+                    <div class="mb-20">
+                        <label class="label">Мобильный телефон</label>
+                        <input type="phone" class="entry-field inputmask-phone mb-5" title="Мобильный телефон" placeholder="+7 (___) ___-___0__">
+                        <a class="link fs-13" href="#">Подробнее о счете</a>
+                    </div>
+                    <div class="mb-15">
+                        <label class="label"> SMS код подтверждения</label>
+                        <input type="text" class="entry-field" title=" SMS код подтверждения" placeholder="|">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn_blue">Подтвердить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

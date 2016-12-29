@@ -134,9 +134,11 @@
     });
 
     app.appLoad('full', function (e) {
+        var header = $('.header');
         var burgerBtn = $('.header  .burger__bth');
         var burgerMenu = $('.burger-menu');
         var wrapOver = $('.wrap__overlay');
+        var wrapSubTp = $('.wrap__substrate-tp');
         var navToggle = $('.burger-menu .nav__toggle');
         var langToggle= $('.lang__toggle');
         var langDD= $('.lang-dropdown');
@@ -150,7 +152,8 @@
             }
         );
 
-        burgerBtn.click(function () {
+        burgerBtn.click(function (e) {
+            e.preventDefault();
             if (burgerMenu.hasClass('open')) {
                 burgerMenu.removeClass('open');
                 burgerBtn.removeClass('active');
@@ -163,10 +166,21 @@
             }
         });
 
-        $(wrapOver).click(function () {
+        $(wrapOver).click(function (e) {
+            e.preventDefault();
             wrapOver.stop().fadeOut(300);
             burgerMenu.removeClass('open');
             burgerBtn.removeClass('active');
+            return false;
+        });
+
+        $(wrapSubTp).click(function (e) {
+            e.preventDefault();
+            langDD.fadeOut(300);
+            langDD.removeClass('open');
+            langToggle.removeClass('active');
+            wrapSubTp.removeClass('active');
+            return false;
         });
 
         navToggle.click(function () {
@@ -183,15 +197,39 @@
             }
         });
 
-        langToggle.click(function () {
-            if (langToggle.hasClass('active')) {
+        langToggle.click(function (e) {
+            e.preventDefault();
+            if (langDD.hasClass('open') && langToggle.hasClass('active')) {
+                langDD.removeClass('open');
                 langToggle.removeClass('active');
+                wrapSubTp.removeClass('active');
                 langDD.stop().fadeOut(300);
             }
             else {
                 langDD.stop().fadeIn(300);
+                langDD.addClass('open');
                 langToggle.addClass('active');
+                wrapSubTp.addClass('active');
             }
-        })
+            return false;
+        });
+
+        $(window).scroll (function () {
+            var scrollTop = $('body').scrollTop();
+
+            if (scrollTop ===  0) {
+                $(header).removeClass('header_shadow');
+            }
+            else {
+                $(header).addClass('header_shadow');
+            }
+        });
+
+        if ($('input.data-inputmask, .inputmask-phone').length > 0) {
+            $('input.data-inputmask, .inputmask-phone').mask("+7 (999) 999-99-99");
+        }
+        if ($('input.data-inputmask, .inputmask-bithday').length > 0) {
+            $('input.data-inputmask, .inputmask-bithday').mask("99 99 999");
+        }
     });
 })();

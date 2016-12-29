@@ -23,6 +23,16 @@ body
         top: 0
         left: 0
         z-index: 90
+    &__substrate-tp
+        display: none
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 90
+        &.active
+            display: block
 
 .header
     width: 100%
@@ -33,6 +43,21 @@ body
     top: 0
     z-index: 100
     +box-sizing(border-box)
+    &:after
+        content: ""
+        display: block
+        width: calc(100% - 1px)
+        height: 1px
+        background: #ededed
+        position: absolute
+        top: 100%
+        left: 0
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3)
+        opacity: 0
+        +transition(all 0.3s ease 0s)
+    &_shadow
+        &:after
+            opacity: 1
     &__list
         display: flex
         justify-content: space-between
@@ -113,7 +138,8 @@ body
         background-color: #f7f7f7
         border-radius: 3px
         position: relative
-        z-index: 10
+        z-index: 110
+        text-decoration: none
         align-items: center
         justify-content: center
         cursor: pointer
@@ -138,6 +164,7 @@ body
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2)
     top: calc(100% + 5px)
     right: 0
+    z-index: 100
     +box-sizing(border-box)
     &:before
         content: ""
@@ -174,6 +201,8 @@ body
         &:nth-child(2n)
             width: 45%
             padding-right: 0
+    &__link
+        text-decoration: none
     &__text
         display: inline-block
         vertical-align: middle
@@ -263,7 +292,16 @@ body
 .content-wrap
     padding-top: 15px
     margin-bottom: 20px
-
+    &_mb-0
+        margin-bottom: 0
+.content-main
+    padding: 20px 10px 20px 10px
+    background: #fbfbfb
+    margin: 0 -10px 0 -10px
+    border: 1px solid #ededed
+.content-footer
+    background: #fff
+    padding: 15px 0
 .honor
     padding: 20px 0
     text-align: center
@@ -297,6 +335,8 @@ body
         width: 69px
         height: 80px
 .content-section
+    padding-top: 15px
+    padding-bottom: 15px
     margin-bottom: 15px
     background: #fff
     +border-radius(5px)
@@ -595,6 +635,21 @@ body
         &:hover, &:focus, &:active, &:visited
             &:hover, &:focus, &:active
                 color: #fe7d1b
+
+.refill
+    margin-bottom: 20px
+    text-align: center
+    font-size: 0
+    &__item
+        display: inline-block
+        padding: 0 15px
+        border-right: 1px solid #c8c8c8
+        &:first-child
+            padding-left: 0
+        &:last-child
+            padding-right: 0
+            border-right: none
+
 .footer
     padding-bottom: 20px
     background-color: #28313e

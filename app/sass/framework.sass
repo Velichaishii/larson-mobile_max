@@ -76,7 +76,7 @@
         +border-radius(5px)
     &_brt-0-blue
         position: relative
-        bottom: -5px
+        bottom: -1px
         &:before
             content: ""
             width: calc(100%)
@@ -96,15 +96,115 @@
                 &:before
                     background: #fff
 
+.radio-box
+    display: inline-block
+    padding-left: 30px
+    position: relative
+    font-family: OpenSans
+    font-size: 14px
+    line-height: 20px
+    cursor: pointer
+.radio-box__switch
+    position: absolute
+    top: 50%
+    left: 0
+    outline: none
+    opacity: 0
+    +transform(translateY(-50%))
+    &:checked + .radio-box__switch-imitator
+        border-color: #168de2
+        &:before
+            width: 9px
+            height: 9px
+            opacity: 1
+.radio-box__switch-imitator
+    display: block
+    width: 20px
+    height: 20px
+    border: 2px solid #b8b8b8
+    position: absolute
+    top: 50%
+    left: 0
+    +border_radius(50%)
+    +box-sizing(border-box)
+    +transition(all 0.3s ease 0s)
+    +transform(translateY(-50%))
+    &:before
+        content: ""
+        display: block
+        width: 20px
+        height: 20px
+        background: #168de2
+        position: absolute
+        top: 50%
+        left: 50%
+        opacity: 0
+        +border_radius(50%)
+        +transition(all 0.3s ease 0s)
+        +transform(translate(-50%, -50%))
+
 .entry-field
+    width: 100%
     padding: 0 14px
     background-color: #fff
     box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.24)
-    border: none
-    line-height: 40px
+    border: 2px solid transparent
+    font-family: OpenSans
+    font-size: 14px
+    line-height: 38px
+    color: #1a1a1a
+    outline: none
+    +box-sizing(border-box)
+    +border-radius(3px)
+    +placeholder(#808080)
+    &::-webkit-input-placeholder
+        color: #808080
+    &::-moz-placeholder
+        color: #808080
+    &:-ms-input-placeholder
+        color: #808080
+    &:focus
+        border: solid 2px #2192fd
+
+.select
+    width: 100%
+    padding: 0 20px 0 14px
+    background-color: #fff
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.24)
+    border: 2px solid transparent
+    font-family: OpenSans
+    font-size: 14px
+    height: 38px
+    color: #1a1a1a
     outline: none
     +border-radius(3px)
     +placeholder(#808080)
+    &::-webkit-input-placeholder
+        color: #808080
+    &::-moz-placeholder
+        color: #808080
+    &:-ms-input-placeholder
+        color: #808080
+    &:focus
+        border: 2px solid #2192fd
+
+.label
+    display: inline-block
+    margin: 0 0 5px 3px
+    font-family: OpenSans-Semibold
+    font-size: 14px
+    color: #1a1a1a
+
+.link
+    display: inline-block
+    text-decoration: none
+    font-family: OpenSans
+    font-size: 14px
+    color: #168de2
+    +transition(all 0.3s ease 0s)
+    &:hover, &:focus, &:active, &:visited
+        &:hover, &:focus, &:active
+            color: #fe7d1b
 
 .badge
     display: inline-block
@@ -157,8 +257,14 @@
         font-size: 11px
         color: #808080
 
+.mb-5
+    margin-bottom: 5px
+.mb-10
+    margin-bottom: 10px
 .mb-15
     margin-bottom: 15px
+.mb-20
+    margin-bottom: 20px
 .mr-5
     margin-right: 5px
 .mr-10
@@ -195,10 +301,15 @@
 .fs-18
     font-size: 18px
 
+.lh-57em
+    line-height: 1.57em
+
 .c-darkest
     color: #1a1a1a
 .c-warm-gray
     color: #808080
+.c-gr-brown
+    color: #4d4d4d
 
 .h2
     font-family: OpenSans-Semibold
