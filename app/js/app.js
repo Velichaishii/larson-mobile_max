@@ -144,7 +144,6 @@
         var langDD= $('.lang-dropdown');
         var popup = $(".popup");
         var popupBtnClose = $(".popup__btn-close");
-        var btnRegistry =
 
         $('.slider').owlCarousel(
             {
