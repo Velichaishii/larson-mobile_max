@@ -1,0 +1,51 @@
+{% extends "layouts/app.twig" %}
+
+{% set back_btn = "true" %}
+
+{% block pageTitle %}DEPOSIT{% endblock %}
+
+{% block content %}
+    <section class="content-wrap content-wrap_mb-0">
+        <div class="container">
+            <div class="mb-10">
+                <h2 class="h2 mb-5 tt-u">Deposit</h2>
+                <p class="ff-os fs-14 c-gr-brown mb-15">Уведомление о переводе денежных средств</p>
+                <p class="ff-os fs-13 c-warm-gray mb-10">Здесь Вы можете уведомить нас о переводе денежных средств.</p>
+                <p class="ff-os fs-13 c-warm-gray">To access the service you have to perform system activation.</p>
+            </div>
+        </div>
+        <div class="content-main">
+            <div class="container">
+                <form method="post">
+                <div class="mb-15">
+                    <label class="label">Аккаунт</label>
+                    <input type="text" class="entry-field" title="Аккаунт" placeholder="Номер аккаунта трейдера">
+                </div>
+                <div class="mb-20">
+                    <label class="label">Пароль</label>
+                    <input type="text" class="entry-field" title="Пароль" placeholder="Введите пароль">
+                </div>
+                <div class="mb-20">
+                    <button type="button" class="btn btn_blue">Войти</button>
+                </div>
+                <ul class="refill">
+                    <li class="refill__item">
+                        <a class="link" href="#">Регистрация</a>
+                    </li>
+                    <li class="refill__item">
+                        <a class="link" href="#">Забыли пароль?</a>
+                    </li>
+                </ul>
+                <div class="ta-c">
+                    <div class="mb-15">
+                        <button type="button" class="btn btn_orange btn_short">Ввод средств</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn_white-orange btn_short">Вывод средства</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

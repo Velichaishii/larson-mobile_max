@@ -21,13 +21,13 @@
     font-size: 14px
     outline: none
     cursor: pointer
-    +border-radius(7px)
     +box-sizing(border-box)
     +transition(all 0.3s ease 0s)
     &_white-blue
         background-color: #fff
         border-color: #c8c8c8
         color: #168de2
+        +border-radius(7px)
         &:hover, &:focus, &:active, &:visited
             &:hover, &:focus, &:active
                 background-color: #2d90fc
@@ -37,6 +37,7 @@
         background-color: #fff
         border-color: #fe7d1b
         color: #fe7d1b
+        +border-radius(7px)
         &:hover, &:focus, &:active, &:visited
             &:hover, &:focus, &:active
                 background-color: #fe7d1b
@@ -46,6 +47,7 @@
         background-color: #2d90fc
         border-color: #2d90fc
         color: #fff
+        +border-radius(4px)
         &:hover, &:focus, &:active, &:visited
             &:hover, &:focus, &:active
                 background-color: #fff
@@ -55,6 +57,7 @@
         background-color: #fe7d1b
         border-color: #fe7d1b
         color: #fff
+        +border-radius(7px)
         &:hover, &:focus, &:active, &:visited
             &:hover, &:focus, &:active
                 background-color: #fff
@@ -64,7 +67,6 @@
         border-color: #1b2532
         background-color: #1b2532
         color: #168de2
-        border-radius: 0
         &:hover, &:focus, &:active, &:visited
             &:hover, &:focus, &:active
                 background-color: #fe7d1b
@@ -74,6 +76,8 @@
         line-height: 24px
         font-size: 13px
         +border-radius(5px)
+    &_short
+        width: 190px
     &_brt-0-blue
         position: relative
         bottom: -1px
@@ -95,7 +99,7 @@
             &:hover, &:focus, &:active
                 &:before
                     background: #fff
-//comment
+
 .radio-box
     display: inline-block
     padding-left: 30px
@@ -155,7 +159,7 @@
     color: #1a1a1a
     outline: none
     +box-sizing(border-box)
-    +border-radius(3px)
+    +border-radius(4px)
     +placeholder(#808080)
     &::-webkit-input-placeholder
         color: #808080
@@ -177,7 +181,7 @@
     height: 38px
     color: #1a1a1a
     outline: none
-    +border-radius(3px)
+    +border-radius(4px)
     +placeholder(#808080)
     &::-webkit-input-placeholder
         color: #808080
@@ -257,6 +261,41 @@
         font-size: 11px
         color: #808080
 
+.captcha
+    display: inline-block
+    width: 100%
+    max-width: 400px
+    +border-radius(5px)
+.captcha__img
+    width: 100%
+    object-fit: contain
+    -o-object-fit: contain
+
+.popup
+    display: none
+    padding: 30px 0
+    width: 100%
+    height: 100%
+    background-color: #28313e
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 100
+.popup__btn-close
+    display: inline-block
+    width: 12px
+    height: 12px
+.popup__btn-line
+    display: inline-block
+    width: 100%
+    height: 2px
+    background: #fff
+    &:first-child
+        +transform(rotate(45deg))
+        margin-bottom: -12px
+    &:last-child
+        +transform(rotate(-45deg))
+
 .mb-5
     margin-bottom: 5px
 .mb-10
@@ -265,6 +304,8 @@
     margin-bottom: 15px
 .mb-20
     margin-bottom: 20px
+.mb-25
+    margin-bottom: 25px
 .mr-5
     margin-right: 5px
 .mr-10
@@ -272,6 +313,8 @@
 
 .ta-c
     text-align: center
+.ta-r
+    text-align: right
 .tt-u
     text-transform: uppercase
 
@@ -301,8 +344,10 @@
 .fs-18
     font-size: 18px
 
-.lh-57em
+.lh-1-57em
     line-height: 1.57em
+.lh-1-31em
+    line-height: 1.31em
 
 .c-darkest
     color: #1a1a1a
@@ -310,11 +355,20 @@
     color: #808080
 .c-gr-brown
     color: #4d4d4d
+.c-red
+    color: #ea433f
+.c-white
+    color: #fff
 
 .h2
     font-family: OpenSans-Semibold
     font-size: 16px
-    line-height: 1.5em
+    line-height: 1.38em
+.h3
+    font-family: OpenSans
+    font-size: 16px
+    line-height: 1.38em
+    color: #fff
 
 .triangle-up
     display: inline-block

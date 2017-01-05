@@ -1,0 +1,50 @@
+{% extends "layouts/app.twig" %}
+
+{% set back_btn = "true" %}
+
+{% block pageTitle %}DEPOSIT{% endblock %}
+
+{% block content %}
+    <section class="content-wrap content-wrap_mb-0">
+        <div class="container">
+            <div class="mb-10">
+                <h2 class="h2 mb-5 tt-u">Deposit</h2>
+                <p class="ff-os fs-14 lh-1-57em c-gr-brown mb-15">Уведомление о переводе денежных средств</p>
+                <p class="ff-os fs-13 lh-1-57em mb-10">При автоматических способах ввода, например Кредитные карты, Webmoney, Qiwi здесь ничего заполнять не нужно. Просто зайдите в торговый терминал и убедитесь, что сумма зачислена. Если вы осуществляли ввод средств в ручном режиме, например при помощи Банковского перевода, вы можете здесь уведомить нас об этом.</p>
+            </div>
+        </div>
+        <div class="content-main">
+            <div class="container">
+                <form method="post">
+                    <div class="mb-20">
+                        <label class="label">Номер счета</label>
+                        <input type="text" class="entry-field" title="Номер счета" placeholder="Номер счета трейдера">
+                    </div>
+                    <div class="mb-20">
+                        <label class="label">Сумма</label>
+                        <input type="text" class="entry-field" title="Сумма" placeholder="Введите сумму">
+                    </div>
+                    <div class="mb-20">
+                        <label class="label">Валюта</label>
+                        <select class="select" title="Валюта">
+                            <option class="select__option">не указано</option>
+                            <option class="select__option">Рубль</option>
+                            <option class="select__option">Доллар</option>
+                            <option class="select__option">Евро</option>
+                        </select>
+                    </div>
+                    <div class="mb-20">
+                        <label class="label">Способ перевода</label>
+                        <select class="select" title="Способ перевода">
+                            <option class="select__option">не указано</option>
+                            <option class="select__option">укзано</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn_blue">Далее</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

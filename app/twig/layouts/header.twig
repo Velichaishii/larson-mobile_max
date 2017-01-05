@@ -2,12 +2,19 @@
     <div class="container">
         <ul class="header__list">
             <li class="header__item burger">
-                <button type="button" class="burger__bth">
-                    <i class="burger__line"></i>
-                    <i class="burger__line"></i>
-                    <i class="burger__line"></i>
-                    <i class="burger__line"></i>
-                </button>
+                {% if check_back_btn == "true" %}
+                    <a class="arrow-back" href="#">
+                        <i class="arrow-back__line"></i>
+                        <i class="arrow-back__line"></i>
+                    </a>
+                {% else %}
+                    <button type="button" class="burger__btn">
+                        <i class="burger__line"></i>
+                        <i class="burger__line"></i>
+                        <i class="burger__line"></i>
+                        <i class="burger__line"></i>
+                    </button>
+                {% endif %}
             </li>
             <li class="header__item logo">
                 <a class="logo__link" href="#">
@@ -26,7 +33,7 @@
                     <ul class="lang-dropdown__list">
                         <li class="lang-dropdown__item">
                             <a class="lang-dropdown__link" href="#">
-                                <i class="icon flag-sb"></i>
+                                <i class="icon flag-ar"></i>
                                 <span class="lang-dropdown__text">Arabic</span>
                             </a>
                         </li>
@@ -39,7 +46,7 @@
                         <li class="lang-dropdown__item">
                             <a class="lang-dropdown__link" href="#">
                                 <i class="icon flag-ch"></i>
-                                <span class="lang-dropdown__text">China</span>
+                                <span class="lang-dropdown__text">中文</span>
                             </a>
                         </li>
                         <li class="lang-dropdown__item">
@@ -63,13 +70,13 @@
                         <li class="lang-dropdown__item">
                             <a class="lang-dropdown__link" href="#">
                                 <i class="icon flag-ru"></i>
-                                <span class="lang-dropdown__text">Francais</span>
+                                <span class="lang-dropdown__text">Français</span>
                             </a>
                         </li>
                         <li class="lang-dropdown__item">
                             <a class="lang-dropdown__link" href="#">
                                 <i class="icon flag-sp"></i>
-                                <span class="lang-dropdown__text">Espanol</span>
+                                <span class="lang-dropdown__text">Español</span>
                             </a>
                         </li>
                         <li class="lang-dropdown__item">
@@ -81,7 +88,7 @@
                         <li class="lang-dropdown__item">
                             <a class="lang-dropdown__link" href="#">
                                 <i class="icon flag-tl"></i>
-                                <span class="lang-dropdown__text">Thailand</span>
+                                <span class="lang-dropdown__text">ประเทศไทย</span>
                             </a>
                         </li>
                         <li class="lang-dropdown__item">
@@ -93,7 +100,7 @@
                         <li class="lang-dropdown__item">
                             <a class="lang-dropdown__link" href="#">
                                 <i class="icon flag-vn"></i>
-                                <span class="lang-dropdown__text">Viet ngu</span>
+                                <span class="lang-dropdown__text">Việt ngữ</span>
                             </a>
                         </li>
                         <li class="lang-dropdown__item">

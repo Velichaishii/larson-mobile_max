@@ -14,7 +14,7 @@
         <a class="wrap__overlay" href="#"></a>
         <a class="wrap__substrate-tp" href="#"></a>
         <!-- Header block -->
-        {% include "header.twig" %}
+        {% include "header.twig" with {"check_back_btn": back_btn} %}
         <!-- Header block end -->
 
         <!-- Block content -->
@@ -213,6 +213,8 @@
                 </div>
             </div>
         </div>
+
+        {% include "popups.twig" %}
     </div>
 </body>
 </html>

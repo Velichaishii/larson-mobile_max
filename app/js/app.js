@@ -142,6 +142,9 @@
         var navToggle = $('.burger-menu .nav__toggle');
         var langToggle= $('.lang__toggle');
         var langDD= $('.lang-dropdown');
+        var popup = $(".popup");
+        var popupBtnClose = $(".popup__btn-close");
+        var btnRegistry =
 
         $('.slider').owlCarousel(
             {
@@ -231,5 +234,9 @@
         if ($('input.data-inputmask, .inputmask-bithday').length > 0) {
             $('input.data-inputmask, .inputmask-bithday').mask("99 99 999");
         }
+
+        popupBtnClose.click (function () {
+            popup.fadeOut(300);
+        })
     });
 })();

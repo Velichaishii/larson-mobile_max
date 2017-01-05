@@ -1,0 +1,36 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Восстановление доступа к кабинету трейдера{% endblock %}
+
+{% block content %}
+    <section class="content-wrap content-wrap_mb-0">
+        <div class="container">
+            <div class="mb-15">
+                <h2 class="h2 mb-5">Восстановление доступа к кабинету трейдера</h2>
+                <p class="ff-os fs-14 lh-1-57em c-gr-brown mb-15">Для восстановления доступа к закрытой части сайта необходимо указать Ваш логин/e-mail и сгенерированный код, указанный на картинке. После отправки запроса, на e-mail указанный при регистрации будет выслано письмо с кодом подтверждения восстановления доступа, который необходимо будет активировать.</p>
+            </div>
+        </div>
+        <div class="content-main">
+            <div class="container">
+                <form method="post">
+                    <div class="mb-20">
+                        <label class="label">Аккаунт</label>
+                        <input type="text" class="entry-field" title="Логин" placeholder="Логин">
+                    </div>
+                    <div class="ta-c mb-20">
+                        <a class="captcha">
+                            <img class="captcha__img" src="images/captcha.jpg">
+                        </a>
+                    </div>
+                    <button type="button" class="btn btn_blue mb-20">Отправить запрос</button>
+                    <div class="ta-c mb-20">
+                        <a class="link" href="#">Авторизация</a>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn_white-blue">Открыть счет</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
