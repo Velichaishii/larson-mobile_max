@@ -135,7 +135,7 @@
 
     app.appLoad('full', function (e) {
         var header = $('.header');
-        var burgerBtn = $('.header  .burger__bth');
+        var burgerBtn = $('.header  .burger__btn');
         var burgerMenu = $('.burger-menu');
         var wrapOver = $('.wrap__overlay');
         var wrapSubTp = $('.wrap__substrate-tp');

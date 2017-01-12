@@ -190,7 +190,7 @@
     width: 16px;
   }
 }
-.icon.flag-ma {
+.icon.flag-fr {
   background-image: url('../images/icons-sd3a2bfcbba.png');
   background-position: 0 -116px;
   background-repeat: no-repeat;
@@ -201,7 +201,7 @@
   width: 16px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-resolution: 1.5dppx) {
-  .icon.flag-ma {
+  .icon.flag-fr {
     background-image: url('../images/icons-2x-sc89d64ed13.png');
     background-size: 30px auto;
     background-position: 0 -101px;
@@ -614,7 +614,7 @@
 
 .container {
   max-width: 768px;
-  padding: 0 10px;
+  padding: 0 12px;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1646,6 +1646,9 @@ body {
   width: 69px;
   height: 80px;
 }
+.honor__caption {
+  line-height: 1.5em;
+}
 
 .content-section {
   padding-top: 15px;
@@ -1695,6 +1698,7 @@ body {
 
 .news-counter {
   text-align: center;
+  margin-bottom: 16px;
 }
 .news-counter__link {
   display: inline-block;
