@@ -6,23 +6,33 @@ body
     font-family: OpenSans
     font-size: 12px
 
+html
+    &.modal-open
+        overflow: hidden
+        .wrap__overlay
+            visibility: visible
+            opacity: 1
 
 .wrap
+    display: flex
+    flex-direction: column
     width: 100%
     min-width: 320px
-    height: 100%
+    min-height: calc(100vh - 65px)
     padding-top: 65px
     position: relative
     overflow: hidden
     &__overlay
-        display: none
         width: 100%
         height: 100%
         background-color: rgba(0, 0, 0, 0.5)
-        position: absolute
+        position: fixed
+        visibility: hidden
+        opacity: 0
         top: 0
         left: 0
         z-index: 90
+        +transition()
     &__substrate-tp
         display: none
         width: 100%
@@ -169,7 +179,7 @@ body
         font-family: OpenSans
         color: #808080
     &__dropdown
-        display: none
+        //display: none
         position: absolute
 .lang-dropdown
     width: 234px
@@ -181,6 +191,9 @@ body
     top: calc(100% + 3px)
     right: 0
     z-index: 100
+    visibility: hidden
+    opacity: 0
+    +transition()
     +box-sizing(border-box)
     &:before
         content: ""
@@ -205,6 +218,11 @@ body
         top: -0px
         right: 0
         +box-sizing(border-box)
+
+    &.open
+        visibility: visible
+        opacity: 1
+
     &__list
         font-size: 0
     &__item
@@ -311,6 +329,7 @@ body
 .content-wrap
     padding-top: 15px
     margin-bottom: 20px
+    flex-grow: 1
     &_mb-0
         margin-bottom: 0
 .content-main
@@ -704,7 +723,7 @@ body
 
 .burger-menu
     width: 270px
-    height: 100%
+    height: calc(100% - 65px)
     background-color: #f2f2f2
     border-top: 4px solid #fe7d1b
     position: fixed
@@ -795,6 +814,7 @@ body
         width: 50px
         height: 50px
         position: relative
+        cursor: pointer
     &__arrow
         height: 8px
         position: absolute

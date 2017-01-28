@@ -11,8 +11,6 @@
 </head>
 <body>
     <div class="wrap">
-        <a class="wrap__overlay" href="#"></a>
-        <a class="wrap__substrate-tp" href="#"></a>
         <!-- Header block -->
         {% include "header.twig" with {"check_back_btn": back_btn} %}
         <!-- Header block end -->
@@ -24,13 +22,15 @@
         <!-- Footer block -->
         {% include "footer.twig" %}
         <!-- Footer block end -->
-
-        {% include "../widgets/burger-menu.twig" %}
-
-        <!-- Scripts -->
-        {% include "scripts.twig" %}
-
-        {% include "popups.twig" %}
     </div>
+
+    <div class="wrap__overlay"></div>
+    <div class="wrap__substrate-tp"></div>
+
+    {% include "../widgets/burger-menu.twig" %}
+    {% include "popups.twig" %}
+
+    <!-- Scripts -->
+    {% include "scripts.twig" %}
 </body>
 </html>

@@ -1,21 +1,25 @@
-(function () {
+var LARSON = (function () {
 
-    function YOURAPPNAME(doc) {
+    function LARSON() {
         var _self = this;
 
-        _self.doc = doc;
+        _self.doc = document;
         _self.window = window;
+        _self.html = _self.doc.querySelector('html');
 
         _self.bootstrap();
     }
 
-    YOURAPPNAME.prototype.bootstrap = function () {
+    LARSON.prototype.bootstrap = function () {
         var _self = this;
 
+        _self.menu();
+        _self.langs();
+        LARSON.popupsVar = _self.popups();
     };
 
     // Window load types (loading, dom, full)
-    YOURAPPNAME.prototype.appLoad = function (type, callback) {
+    LARSON.prototype.appLoad = function (type, callback) {
         var _self = this;
 
         switch (type) {
@@ -40,7 +44,7 @@
         }
     };
 
-    YOURAPPNAME.prototype.initSwitcher = function () {
+    LARSON.prototype.initSwitcher = function () {
         var _self = this;
 
         var switchers = _self.doc.querySelectorAll('[data-switcher]');
@@ -85,7 +89,7 @@
         }
     };
 
-    YOURAPPNAME.prototype.str2json = function (str, notevil) {
+    LARSON.prototype.str2json = function (str, notevil) {
         try {
             if (notevil) {
                 return JSON.parse(str
@@ -104,7 +108,7 @@
         }
     };
 
-    YOURAPPNAME.prototype.options = function (string) {
+    LARSON.prototype.options = function (string) {
         var _self = this;
 
         if (typeof string != 'string') return string;
@@ -125,124 +129,175 @@
         return options;
     };
 
-    var app = new YOURAPPNAME(document);
+    LARSON.prototype.menu = function () {
+        var _self = this;
+        var burgerBtn = _self.doc.querySelector('.burger__btn');
+        var burgerMenu = _self.doc.querySelector('.burger-menu');
+        var wrapOver = _self.doc.querySelector('.wrap__overlay');
+        var navToggle = _self.doc.querySelectorAll('.burger-menu .nav__toggle');
+        var html = _self.doc.querySelector('html');
 
-    app.appLoad('loading', function () {
-        console.log('App is loading... Paste your app code here.');
-        // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
-    });
-
-    app.appLoad('dom', function () {
-        console.log('DOM is loaded! Paste your app code here (Pure JS code).');
-        // DOM is loaded! Paste your app code here (Pure JS code).
-        // Do not use jQuery here cause external libs do not loads here...
-
-        app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
-    });
-
-    app.appLoad('full', function (e) {
-        var header = $('.header');
-        var burgerBtn = $('.header  .burger__btn');
-        var burgerMenu = $('.burger-menu');
-        var wrapOver = $('.wrap__overlay');
-        var wrapSubTp = $('.wrap__substrate-tp');
-        var navToggle = $('.burger-menu .nav__toggle');
-        var langToggle = $('.lang__toggle');
-        var langDD = $('.lang-dropdown');
-        var popup = $(".popup");
-        var popupBtnClose = $(".popup__btn-close");
-
-        $('.slider').owlCarousel(
-            {
-                items: 1,
-                nav: false,
-                dots: true,
-                // autoHeight: true
-            }
-        );
-
-        burgerBtn.click(function (e) {
+        burgerBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            if (burgerMenu.hasClass('open')) {
-                burgerMenu.removeClass('open');
-                burgerBtn.removeClass('active');
-                wrapOver.stop().fadeOut(300);
-            }
-            else {
-                burgerMenu.addClass('open');
-                burgerBtn.addClass('active');
-                wrapOver.stop().fadeIn(300);
+            if (burgerMenu.classList.contains('open')) {
+                burgerMenu.classList.remove('open');
+                burgerBtn.classList.remove('active');
+                html.classList.remove('modal-open');
+            } else {
+                burgerMenu.classList.add('open');
+                burgerBtn.classList.add('active');
+                html.classList.add('modal-open');
             }
         });
 
-        $(wrapOver).click(function (e) {
+        wrapOver.addEventListener('click', function (e) {
             e.preventDefault();
-            wrapOver.stop().fadeOut(300);
-            burgerMenu.removeClass('open');
-            burgerBtn.removeClass('active');
-            return false;
+            burgerMenu.classList.remove('open');
+            burgerBtn.classList.remove('active');
+            html.classList.remove('modal-open');
         });
 
-        $(wrapSubTp).click(function (e) {
-            e.preventDefault();
-            langDD.fadeOut(300);
-            langDD.removeClass('open');
-            langToggle.removeClass('active');
-            wrapSubTp.removeClass('active');
-            return false;
-        });
+        for (i = 0; i < navToggle.length; i++) {
+            navToggle[i].addEventListener('click', function (e) {
+                e.preventDefault();
 
-        navToggle.click(function () {
-            var navListDD = $(this).closest('.nav__item').find('.nav__list_dropdown');
-            var navItem = $(this).closest('.nav__item');
+                var navItem = $(this).closest('.nav__item');
+                var navListDD = navItem.find('.nav__list_dropdown');
 
-            if (navItem.hasClass('dropdown-open')) {
-                navListDD.stop().slideUp(300);
-                navItem.removeClass('dropdown-open');
-            }
-            else {
-                navListDD.stop().slideDown('300');
-                navItem.addClass('dropdown-open');
-            }
-        });
-
-        langToggle.click(function (e) {
-            e.preventDefault();
-            if (langDD.hasClass('open') && langToggle.hasClass('active')) {
-                langDD.removeClass('open');
-                langToggle.removeClass('active');
-                wrapSubTp.removeClass('active');
-                langDD.stop().fadeOut(300);
-            }
-            else {
-                langDD.stop().fadeIn(300);
-                langDD.addClass('open');
-                langToggle.addClass('active');
-                wrapSubTp.addClass('active');
-            }
-            return false;
-        });
-
-        $(window).scroll(function () {
-            var scrollTop = $('body').scrollTop();
-
-            if (scrollTop === 0) {
-                $(header).removeClass('header_shadow');
-            }
-            else {
-                $(header).addClass('header_shadow');
-            }
-        });
-
-        if ($('input.data-inputmask, .inputmask-phone').length > 0) {
-            $('input.data-inputmask, .inputmask-phone').mask("+7 (999) 999-99-99");
+                if (navItem.hasClass('dropdown-open')) {
+                    navListDD.stop().slideUp(300);
+                    navItem.removeClass('dropdown-open');
+                    console.log('close');
+                } else {
+                    navListDD.stop().slideDown('300');
+                    navItem.addClass('dropdown-open');
+                    console.log('open');
+                }
+            });
         }
-        if ($('input.data-inputmask, .inputmask-bithday').length > 0) {
-            $('input.data-inputmask, .inputmask-bithday').mask("99 99 999");
-        }
+    };
 
-        popupBtnClose.click(function () {
-            popup.fadeOut(300);
-        })
-    });
+    LARSON.prototype.popups = function () {
+        var _self = this;
+        var popup = {};
+
+        popup.popupBtnClose = _self.doc.querySelectorAll(".js-close-modal");
+        popup.popupBtnCall = _self.doc.querySelectorAll(".js-open-modal");
+
+        popup.init = function () {
+            popup.bindings();
+        };
+
+        popup.bindings = function () {
+            for (i = 0; i < popup.popupBtnClose.length; i++) {
+                popup.popupBtnClose[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    var popupName = this.closest('.popup').getAttribute('data-popup');
+                    popup.closePopup(popupName);
+                });
+            }
+
+            for (i = 0; i < popup.popupBtnCall.length; i++) {
+                popup.items[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    if (this.hasAttribute('data-open-popup')) {
+                        e.preventDefault();
+
+                        var popupName = this.getAttribute('data-open-popup');
+                        popup.openPopup(popupName);
+                    }
+                });
+            }
+        };
+
+        popup.openPopup = function (popupName) {
+            var popups = _self.doc.querySelectorAll('[data-popup="' + popupName + '"]');
+
+            _self.html.classList.add('modal-open');
+            for (i = 0; i < popups.length; i++) {
+                popups[i].classList.add('active');
+            }
+        };
+
+        popup.closePopup = function (popupName) {
+            var popups = _self.doc.querySelectorAll('[data-popup="' + popupName + '"]');
+
+            _self.html.classList.remove('modal-open');
+            for (i = 0; i < popups.length; i++) {
+                popups[i].classList.remove('active');
+            }
+        };
+
+        popup.init();
+
+        return popup;
+    };
+
+    LARSON.prototype.langs = function () {
+        var _self = this;
+
+        var wrapSubTp = _self.doc.querySelector('.wrap__substrate-tp');
+        var langToggle = _self.doc.querySelector('.lang__toggle');
+        var langDD = _self.doc.querySelector('.lang-dropdown');
+
+        langToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (langDD.classList.contains('open') && langToggle.classList.contains('active')) {
+                langDD.classList.remove('open');
+                langToggle.classList.remove('active');
+                wrapSubTp.classList.remove('active');
+            } else {
+                langDD.classList.add('open');
+                langToggle.classList.add('active');
+                wrapSubTp.classList.add('active');
+            }
+        });
+
+        wrapSubTp.addEventListener('click', function (e) {
+            e.preventDefault();
+            langDD.classList.remove('open');
+            langToggle.classList.remove('active');
+            wrapSubTp.classList.remove('active');
+        });
+    };
+
+    return LARSON;
 })();
+
+var app = new LARSON();
+
+app.appLoad('full', function (e) {
+
+    // app.menu();
+
+    $('.slider').owlCarousel({
+        items: 1,
+        nav: false,
+        dots: true
+        // autoHeight: true
+    });
+
+    var header = $('.header');
+    $(window).scroll(function () {
+        var scrollTop = $('body').scrollTop();
+
+        if (scrollTop === 0) {
+            header.removeClass('header_shadow');
+        } else {
+            header.addClass('header_shadow');
+        }
+    });
+
+    if ($('input.data-inputmask, .inputmask-phone').length > 0) {
+        $('input.data-inputmask, .inputmask-phone').mask("+7 (999) 999-99-99");
+    }
+    if ($('input.data-inputmask, .inputmask-bithday').length > 0) {
+        $('input.data-inputmask, .inputmask-bithday').mask("99 99 999");
+    }
+
+    app.popups().openPopup('success')
+    app.popups().openPopup('send-letter')
+    app.popups().openPopup('safe')
+});
