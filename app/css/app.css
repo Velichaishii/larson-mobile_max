@@ -1514,9 +1514,13 @@ html.modal-open .wrap__overlay {
 .owl-carousel.slider {
   border-top: 3px solid #0771bd;
 }
+.owl-carousel.slider .owl-item {
+  display: flex;
+}
 .owl-carousel.slider .slider__item {
   position: relative;
-  height: 100%;
+  min-height: 100%;
+  width: 100%;
 }
 .owl-carousel.slider .owl-dots {
   display: block;
@@ -1733,7 +1737,6 @@ html.modal-open .wrap__overlay {
   text-decoration: none;
   font-family: OpenSans-Semibold;
   font-size: 14px;
-  font-weight: 600;
   line-height: 1.43em;
   color: #168de2;
 }
