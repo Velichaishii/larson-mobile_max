@@ -16,6 +16,9 @@ html
 .owl-stage
     display: flex
 
+    &:after
+        font-size: 0
+
 .wrap
     display: flex
     flex-direction: column
@@ -538,14 +541,14 @@ html
     &__header
         margin-bottom: 10px
         text-align: center
-        font-family: OpenSans
+        font-family: OpenSans-Semibold
         font-size: 16px
-        font-weight: 600
+        font-weight: normal
         line-height: 1.38em
     &__text
         margin-bottom: 20px
         text-align: center
-        font-family: OpenSans-Semibold
+        font-family: OpenSans
         font-size: 12px
         opacity: 0.7
         color: #ffffff
@@ -651,12 +654,12 @@ html
         text-align: left
     &__item
         margin-bottom: 15px
-        font-size: 0
+        line-height: normal
     &__info
         margin-bottom: 5px
     &__date
         display: inline-block
-        vertical-align: top
+        vertical-align: middle
         width: 65px
         font-family: OpenSans
         font-size: 12px
@@ -664,26 +667,37 @@ html
         color: #808080
     &__category
         display: inline-block
-        width: calc(100% - 65px)
+        max-width: calc(100% - 65px)
         padding-left: 10px
+        vertical-align: middle
         color: #4d4d4d
+        line-height: 1.5
         +box-sizing(border-box)
-        .news__link
-            text-decoration: underline
-            font-size: 12px
-            line-height: 1.5em
+        &-link
             color: #4d4d4d
     &__link
         text-decoration: none
         font-family: OpenSans
         font-size: 13px
-        font-weight: 600
         line-height: 1.23em
         color: #168de2
         +transition(all 0.3s ease 0s)
-        &:hover, &:focus, &:active, &:visited
-            &:hover, &:focus, &:active
-                color: #fe7d1b
+        &:hover, &:focus, &:active
+            color: #fe7d1b
+
+    &-item__link
+        display: inline-block
+        color: #168DE2
+        text-decoration: none
+        font-family: OpenSans-Semibold
+        font-size: 13px
+        line-height: 1.2
+
+    &-showall__link
+        color: #168DE2
+        font-family: OpenSans-Semibold
+        font-size: 14px
+        text-decoration: none
 
 .refill
     margin-bottom: 20px
@@ -719,9 +733,8 @@ html
 .soc
     &__link
         color: #fbfbfb
-        &:hover, &:focus, &:active, &:visited
-            &:hover, &:focus, &:active
-                color: #168de2
+        &:hover, &:focus, &:active
+            color: #168de2
     &__list
         display: flex
         justify-content: space-between
@@ -788,6 +801,10 @@ html
         &.dropdown-open
             .nav__arrow
                 +transform(translate(-50%,-50%) rotate(180deg))
+
+        &_dropdown
+            &:not(:last-child)
+                border-bottom: 1px solid #e8e8e8
     &__row
         border-bottom: 1px solid #e8e8e8
         font-size: 0

@@ -200,7 +200,7 @@ var LARSON = (function () {
             }
 
             for (i = 0; i < popup.popupBtnCall.length; i++) {
-                popup.items[i].addEventListener('click', function (e) {
+                popup.popupBtnCall[i].addEventListener('click', function (e) {
                     e.preventDefault();
 
                     if (this.hasAttribute('data-open-popup')) {

@@ -649,7 +649,7 @@
   -moz-border-radius: 7px;
   border-radius: 7px;
 }
-.btn_white-blue:hover:hover, .btn_white-blue:hover:focus, .btn_white-blue:hover:active, .btn_white-blue:focus:hover, .btn_white-blue:focus:focus, .btn_white-blue:focus:active, .btn_white-blue:active:hover, .btn_white-blue:active:focus, .btn_white-blue:active:active, .btn_white-blue:visited:hover, .btn_white-blue:visited:focus, .btn_white-blue:visited:active {
+.btn_white-blue:hover, .btn_white-blue:focus, .btn_white-blue:active {
   background-color: #2d90fc;
   border-color: #2d90fc;
   color: #fff;
@@ -662,7 +662,7 @@
   -moz-border-radius: 7px;
   border-radius: 7px;
 }
-.btn_white-orange:hover:hover, .btn_white-orange:hover:focus, .btn_white-orange:hover:active, .btn_white-orange:focus:hover, .btn_white-orange:focus:focus, .btn_white-orange:focus:active, .btn_white-orange:active:hover, .btn_white-orange:active:focus, .btn_white-orange:active:active, .btn_white-orange:visited:hover, .btn_white-orange:visited:focus, .btn_white-orange:visited:active {
+.btn_white-orange:hover, .btn_white-orange:focus, .btn_white-orange:active {
   background-color: #fe7d1b;
   border-color: #fe7d1b;
   color: #fff;
@@ -675,10 +675,9 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.btn_blue:hover:hover, .btn_blue:hover:focus, .btn_blue:hover:active, .btn_blue:focus:hover, .btn_blue:focus:focus, .btn_blue:focus:active, .btn_blue:active:hover, .btn_blue:active:focus, .btn_blue:active:active, .btn_blue:visited:hover, .btn_blue:visited:focus, .btn_blue:visited:active {
-  background-color: #fff;
-  border-color: #2d90fc;
-  color: #2d90fc;
+.btn_blue:hover, .btn_blue:focus, .btn_blue:active {
+  background-color: #2086e5;
+  border-color: #2086e5;
 }
 .btn_orange {
   background-color: #fe7d1b;
@@ -688,17 +687,17 @@
   -moz-border-radius: 7px;
   border-radius: 7px;
 }
-.btn_orange:hover:hover, .btn_orange:hover:focus, .btn_orange:hover:active, .btn_orange:focus:hover, .btn_orange:focus:focus, .btn_orange:focus:active, .btn_orange:active:hover, .btn_orange:active:focus, .btn_orange:active:active, .btn_orange:visited:hover, .btn_orange:visited:focus, .btn_orange:visited:active {
-  background-color: #fff;
-  border-color: #fe7d1b;
-  color: #fe7d1b;
+.btn_orange:hover, .btn_orange:focus, .btn_orange:active {
+  background-color: #ec6600;
+  border-color: #ec6600;
+  color: #fff;
 }
 .btn_black-orange {
   border-color: #1b2532;
   background-color: #1b2532;
   color: #168de2;
 }
-.btn_black-orange:hover:hover, .btn_black-orange:hover:focus, .btn_black-orange:hover:active, .btn_black-orange:focus:hover, .btn_black-orange:focus:focus, .btn_black-orange:focus:active, .btn_black-orange:active:hover, .btn_black-orange:active:focus, .btn_black-orange:active:active, .btn_black-orange:visited:hover, .btn_black-orange:visited:focus, .btn_black-orange:visited:active {
+.btn_black-orange:hover, .btn_black-orange:focus, .btn_black-orange:active {
   background-color: #fe7d1b;
   border-color: #fe7d1b;
   color: #fff;
@@ -714,29 +713,7 @@
   width: 190px;
 }
 .btn_brt-0-blue {
-  position: relative;
-  bottom: -1px;
-}
-.btn_brt-0-blue:before {
-  content: "";
-  width: calc(100%);
-  height: 10px;
-  display: block;
-  background-color: #2d90fc;
-  border-style: solid;
-  border-color: #2d90fc;
-  border-width: 1px 1px 0 1px;
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-.btn_brt-0-blue:hover:hover:before, .btn_brt-0-blue:hover:focus:before, .btn_brt-0-blue:hover:active:before, .btn_brt-0-blue:focus:hover:before, .btn_brt-0-blue:focus:focus:before, .btn_brt-0-blue:focus:active:before, .btn_brt-0-blue:active:hover:before, .btn_brt-0-blue:active:focus:before, .btn_brt-0-blue:active:active:before, .btn_brt-0-blue:visited:hover:before, .btn_brt-0-blue:visited:focus:before, .btn_brt-0-blue:visited:active:before {
-  background: #fff;
+  border-radius: 0 0 5px 5px;
 }
 
 .radio-box {
@@ -823,7 +800,7 @@
   padding: 0 14px;
   background-color: #fff;
   box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.24);
-  border: 2px solid transparent;
+  border: none;
   font-family: OpenSans;
   font-size: 14px;
   line-height: 38px;
@@ -856,7 +833,8 @@
   color: #808080;
 }
 .entry-field:focus {
-  border: solid 2px #2192fd;
+  border: none;
+  box-shadow: inset 0 0 0 2px #2192fd;
 }
 
 .select {
@@ -864,7 +842,7 @@
   padding: 0 20px 0 14px;
   background-color: #fff;
   box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.24);
-  border: 2px solid transparent;
+  border: none;
   font-family: OpenSans;
   font-size: 14px;
   height: 38px;
@@ -893,7 +871,8 @@
   color: #808080;
 }
 .select:focus {
-  border: 2px solid #2192fd;
+  border: none;
+  box-shadow: inset 0 0 0 2px #2192fd;
 }
 
 .label {
@@ -915,7 +894,7 @@
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.link:hover:hover, .link:hover:focus, .link:hover:active, .link:focus:hover, .link:focus:focus, .link:focus:active, .link:active:hover, .link:active:focus, .link:active:active, .link:visited:hover, .link:visited:focus, .link:visited:active {
+.link:hover, .link:focus, .link:active {
   color: #fe7d1b;
 }
 
@@ -1209,6 +1188,9 @@ html.modal-open .wrap__overlay {
 
 .owl-stage {
   display: flex;
+}
+.owl-stage:after {
+  font-size: 0;
 }
 
 .wrap {
@@ -1899,15 +1881,15 @@ html.modal-open .wrap__overlay {
 .banner-content__header {
   margin-bottom: 10px;
   text-align: center;
-  font-family: OpenSans;
+  font-family: OpenSans-Semibold;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: normal;
   line-height: 1.38em;
 }
 .banner-content__text {
   margin-bottom: 20px;
   text-align: center;
-  font-family: OpenSans-Semibold;
+  font-family: OpenSans;
   font-size: 12px;
   opacity: 0.7;
   color: #ffffff;
@@ -2048,14 +2030,14 @@ html.modal-open .wrap__overlay {
 }
 .news__item {
   margin-bottom: 15px;
-  font-size: 0;
+  line-height: normal;
 }
 .news__info {
   margin-bottom: 5px;
 }
 .news__date {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   width: 65px;
   font-family: OpenSans;
   font-size: 12px;
@@ -2064,24 +2046,22 @@ html.modal-open .wrap__overlay {
 }
 .news__category {
   display: inline-block;
-  width: calc(100% - 65px);
+  max-width: calc(100% - 65px);
   padding-left: 10px;
+  vertical-align: middle;
   color: #4d4d4d;
+  line-height: 1.5;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.news__category .news__link {
-  text-decoration: underline;
-  font-size: 12px;
-  line-height: 1.5em;
+.news__category-link {
   color: #4d4d4d;
 }
 .news__link {
   text-decoration: none;
   font-family: OpenSans;
   font-size: 13px;
-  font-weight: 600;
   line-height: 1.23em;
   color: #168de2;
   -webkit-transition: all 0.3s ease 0s;
@@ -2089,8 +2069,22 @@ html.modal-open .wrap__overlay {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.news__link:hover:hover, .news__link:hover:focus, .news__link:hover:active, .news__link:focus:hover, .news__link:focus:focus, .news__link:focus:active, .news__link:active:hover, .news__link:active:focus, .news__link:active:active, .news__link:visited:hover, .news__link:visited:focus, .news__link:visited:active {
+.news__link:hover, .news__link:focus, .news__link:active {
   color: #fe7d1b;
+}
+.news-item__link {
+  display: inline-block;
+  color: #168DE2;
+  text-decoration: none;
+  font-family: OpenSans-Semibold;
+  font-size: 13px;
+  line-height: 1.2;
+}
+.news-showall__link {
+  color: #168DE2;
+  font-family: OpenSans-Semibold;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .refill {
@@ -2137,7 +2131,7 @@ html.modal-open .wrap__overlay {
 .soc__link {
   color: #fbfbfb;
 }
-.soc__link:hover:hover, .soc__link:hover:focus, .soc__link:hover:active, .soc__link:focus:hover, .soc__link:focus:focus, .soc__link:focus:active, .soc__link:active:hover, .soc__link:active:focus, .soc__link:active:active, .soc__link:visited:hover, .soc__link:visited:focus, .soc__link:visited:active {
+.soc__link:hover, .soc__link:focus, .soc__link:active {
   color: #168de2;
 }
 .soc__list {
@@ -2229,6 +2223,9 @@ html.modal-open .wrap__overlay {
   -ms-transform: translate(-50%, -50%) rotate(180deg);
   -o-transform: translate(-50%, -50%) rotate(180deg);
   transform: translate(-50%, -50%) rotate(180deg);
+}
+.nav__item_dropdown:not(:last-child) {
+  border-bottom: 1px solid #e8e8e8;
 }
 .nav__row {
   border-bottom: 1px solid #e8e8e8;

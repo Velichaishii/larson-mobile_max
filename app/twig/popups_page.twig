@@ -1,0 +1,16 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Страница попапов{% endblock %}
+
+{% block content %}
+
+    <section class="content-wrap">
+        <div class="container">
+            <h1>страница для вызова попапов</h1>
+
+            <a href="#" class="js-open-modal" data-open-popup="send-letter">попап 1</a>
+            <a href="#" class="js-open-modal" data-open-popup="safe">попап 2</a>
+            <a href="#" class="js-open-modal" data-open-popup="success">попап 3</a>
+        </div>
+    </section>
+{% endblock %}
