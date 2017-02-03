@@ -15,7 +15,10 @@ var LARSON = (function () {
 
         _self.menu();
         _self.langs();
-        LARSON.popupsVar = _self.popups();
+        _self.popupsApp = _self.popups();
+        _self.countdown('.counter-signature');
+        _self.upButton('.upButton');
+        _self.initSwitcher();
     };
 
     // Window load types (loading, dom, full)
@@ -72,7 +75,7 @@ var LARSON = (function () {
 
                     switcherElem.children[0].addEventListener('click', function (elem, target, parent, targets) {
                         return function (e) {
-                            e.preventDefault();
+                            // e.preventDefault();
                             if (!elem.classList.contains('active')) {
                                 for (var z = 0; z < parentNode.length; z++) {
                                     parent[z].classList.remove('active');
@@ -167,11 +170,9 @@ var LARSON = (function () {
                 if (navItem.hasClass('dropdown-open')) {
                     navListDD.stop().slideUp(300);
                     navItem.removeClass('dropdown-open');
-                    console.log('close');
                 } else {
                     navListDD.stop().slideDown('300');
                     navItem.addClass('dropdown-open');
-                    console.log('open');
                 }
             });
         }
@@ -263,6 +264,88 @@ var LARSON = (function () {
         });
     };
 
+    LARSON.prototype.countdown = function (className) {
+        var _self = this;
+
+        var countDowns = _self.doc.querySelectorAll(className);
+        if (countDowns) {
+
+            for (i = 0; i < countDowns.length; i++) {
+                var time;
+                if (countDowns[i].hasAttribute('data-countdown'))
+                    time = countDowns[i].getAttribute('data-countdown')
+                else
+                    time = "June 7, 2087 15:03:25"
+                new Countdown(countDowns[i], {
+                    date: time,
+                    render: function (date) {
+                        this.el.innerHTML = '' +
+                            '<div class="counter-signature__list">' +
+                            '<div class="counter-signature__item">' +
+                            '<div class="counter-signature__numeral">' + date.days + '</div>' +
+                            '<div class="counter-signature__text">дней</div>' +
+                            '</div>' +
+                            '<div class="counter-signature__item">' +
+                            '<div class="counter-signature__numeral">' + this.leadingZeros(date.hours) + '</div>' +
+                            '<div class="counter-signature__text">часов</div>' +
+                            '</div>' +
+                            '<div class="counter-signature__item">' +
+                            '<div class="counter-signature__numeral">' + this.leadingZeros(date.min) + '</div>' +
+                            '<div class="counter-signature__text">минут</div>' +
+                            '</div>' +
+                            '<div class="counter-signature__item">' +
+                            '<div class="counter-signature__numeral counter-signature__numeral_c-ls">' + this.leadingZeros(date.sec) + '</div>' +
+                            '<div class="counter-signature__text">секунд</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                });
+            }
+        }
+
+        var newsTimer = _self.doc.querySelectorAll('.news-counter__time');
+        if(newsTimer) {
+            for (i = 0; i < newsTimer.length; i++) {
+                var newsTime;
+                if (newsTimer[i].hasAttribute('data-countdown'))
+                    newsTime = newsTimer[i].getAttribute('data-countdown')
+                else
+                    newsTime = "June 7, 2087 15:03:25"
+                new Countdown(newsTimer[i], {
+                    date: newsTime,
+                    render: function (date) {
+                        this.el.innerHTML = '' +
+                            '<div class="counter__numeral">'+date.hours+'</div>' +
+                            ':' +
+                            '<div class="counter__numeral">'+this.leadingZeros(date.min)+'</div>' +
+                            ':' +
+                            '<div class="counter__numeral">'+this.leadingZeros(date.sec)+'</div>';
+                    }
+                });
+            }
+        }
+    };
+
+    LARSON.prototype.upButton = function (className) {
+        var _self = this;
+
+        var button = _self.doc.querySelector(className);
+
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            $('body, html').animate({scrollTop: 0}, 500);
+        });
+
+        _self.window.onscroll = function () {
+            if(_self.window.scrollY > 100) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        };
+    };
+
     return LARSON;
 })();
 
@@ -297,7 +380,5 @@ app.appLoad('full', function (e) {
         $('input.data-inputmask, .inputmask-bithday').mask("99 99 999");
     }
 
-    app.popups().openPopup('success')
-    app.popups().openPopup('send-letter')
-    app.popups().openPopup('safe')
+    // app.popupsApp.openPopup('success');
 });

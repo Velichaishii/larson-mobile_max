@@ -121,7 +121,8 @@ gulp.task('compass', function () {
             sass: sources.sass.dist,
             css: sources.css.dist,
             js: sources.js.dist,
-            image: 'app/images'
+            image: 'app/images',
+            sourcemap: true
         }))
         .pipe(gulp.dest(sources.css.dist))
         .pipe(browserSync.reload({stream: true}));

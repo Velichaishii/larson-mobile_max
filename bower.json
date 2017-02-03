@@ -6,6 +6,7 @@
   "dependencies": {
     "owl.carousel": "^2.2.0",
     "reset-css": "^2.2.0",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "countdown": "^2.2.0"
   }
 }
