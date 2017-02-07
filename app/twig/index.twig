@@ -5,13 +5,14 @@
 {% block content %}
     <section class="owl-carousel slider">
         <div class="slider__item slide">
-            <div class="slide__bg" style="background: url(images/slide-1.jpg) no-repeat center center; background-size: cover"></div>
+            <div class="slide__bg"
+                 style="background: url(images/slide-1.jpg) no-repeat center center; background-size: cover"></div>
             <div class="slide__mask"></div>
             <div class="slide__content slide-content">
                 <div class="container">
                     <h2 class="slide-content__header">Бездепозитные счета</h2>
                     <p class="slide-content__text-small">Уникальный сервис позволяющий<br>
-                        получить стартовый  капитал<br>
+                        получить стартовый капитал<br>
                         для начинающих трейдеров</p>
                     <p class="slide-content__text-box">
                         <i class="slide-content__icon icon check"></i>
@@ -21,7 +22,8 @@
             </div>
         </div>
         <div class="slider__item slide">
-            <div class="slide__bg" style="background: url(images/slide-2.jpg) no-repeat center center; background-size: cover"></div>
+            <div class="slide__bg"
+                 style="background: url(images/slide-2.jpg) no-repeat center center; background-size: cover"></div>
             <div class="slide__mask"></div>
             <div class="slide__content slide-content">
                 <div class="container">
@@ -36,12 +38,14 @@
             </div>
         </div>
         <div class="slider__item slide">
-            <div class="slide__bg" style="background: url(images/slide-3.jpg) no-repeat center center; background-size: cover"></div>
+            <div class="slide__bg"
+                 style="background: url(images/slide-3.jpg) no-repeat center center; background-size: cover"></div>
             <div class="slide__mask"></div>
             <div class="slide__content slide-content">
                 <div class="container">
                     <h2 class="slide-content__header">Классический Форекс</h2>
-                    <p class="slide-content__text-small">Качественный сервис на рынке Форекс и CFD контрактов проверенный временем</p>
+                    <p class="slide-content__text-small">Качественный сервис на рынке Форекс и CFD контрактов
+                        проверенный временем</p>
                     <p class="slide-content__text-box">
                         <i class="slide-content__icon icon check"></i>
                         <span class="slide-content__text-medium">Этот сервис выбирают миллионы трейдеров  со всего мира</span>
@@ -50,12 +54,14 @@
             </div>
         </div>
         <div class="slider__item slide">
-            <div class="slide__bg" style="background: url(images/slide-4.jpg) no-repeat center center; background-size: cover"></div>
+            <div class="slide__bg"
+                 style="background: url(images/slide-4.jpg) no-repeat center center; background-size: cover"></div>
             <div class="slide__mask"></div>
             <div class="slide__content slide-content">
                 <div class="container">
                     <h2 class="slide-content__header">NDD/ECN счета</h2>
-                    <p class="slide-content__text-small">Прямой доступ к межбанковской ликвидности по технологии STP  и Direct Memory Access (DMA)</p>
+                    <p class="slide-content__text-small">Прямой доступ к межбанковской ликвидности по технологии STP и
+                        Direct Memory Access (DMA)</p>
                     <p class="slide-content__text-box">
                         <i class="slide-content__icon icon check"></i>
                         <span class="slide-content__text-medium">Оптимальное решение<br> для алгоритмического  трейдинга</span>
@@ -64,12 +70,14 @@
             </div>
         </div>
         <div class="slider__item slide">
-            <div class="slide__bg" style="background: url(images/slide-5.jpg) no-repeat center center; background-size: cover"></div>
+            <div class="slide__bg"
+                 style="background: url(images/slide-5.jpg) no-repeat center center; background-size: cover"></div>
             <div class="slide__mask"></div>
             <div class="slide__content slide-content">
                 <div class="container">
                     <h2 class="slide-content__header">Стать партнером</h2>
-                    <p class="slide-content__text-small">Отдел развития Larson&Holz Ltd делает Вам уникальное предложение</p>
+                    <p class="slide-content__text-small">Отдел развития Larson&Holz Ltd делает Вам уникальное
+                        предложение</p>
                     <p class="slide-content__text-box">
                         <i class="slide-content__icon icon check"></i>
                         <span class="slide-content__text-medium">Стань партнёром и начни зарабатывать от 10 000$ пассивного дохода в месяц</span>
@@ -85,18 +93,14 @@
                 <h2 class="h2">Лучший ndd-сервис</h2>
                 <p class="honor__text">по версии russian trading day</p>
                 <div class="honor__grid">
-                    <div class="honor__item">
-                        <div class="mb-5">
-                            <img class="honor__img" src="images/the-best-broker-2013.png">
+                    {% for i in 1..7 %}
+                        <div class="honor__item">
+                            <div class="mb-5">
+                                <i class="icon-trophy-{{ i }}"></i>
+                            </div>
+                            <p class="honor__caption">The Best Brocker 2013</p>
                         </div>
-                        <p class="honor__caption">The Best Brocker 2013</p>
-                    </div>
-                    <div class="honor__item">
-                        <div class="mb-5">
-                            <img class="honor__img" src="images/iaft-awards-2012.png">
-                        </div>
-                        <p class="honor__caption">IAFT awards 2012</p>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -230,11 +234,14 @@
     </section>
     <section class="banner">
         <div class="container">
-            <div class="banner__bg" style="background: url(images/banner.jpg) no-repeat center center; background-size: cover"></div>
+            <div class="banner__bg"
+                 style="background: url(images/banner.jpg) no-repeat center center; background-size: cover"></div>
             <div class="banner__mask"></div>
             <div class="banner__content banner-content">
-                <h2 class="banner-content__header">Уникальный конкурс<br>призовой фонд более 150 000$<br>от Larson&Holz</h2>
-                <p class="banner-content__text">Открой счет сегодня и получи возможность участвовать в конкурсе с призовым фондом более 150 000 $</p>
+                <h2 class="banner-content__header">Уникальный конкурс<br>призовой фонд более 150 000$<br>от Larson&Holz
+                </h2>
+                <p class="banner-content__text">Открой счет сегодня и получи возможность участвовать в конкурсе с
+                    призовым фондом более 150 000 $</p>
                 <div>
                     <a class="btn btn_orange" href="#">Участвовать в конкурсе</a>
                 </div>
