@@ -1,26 +1,26 @@
 /* DEV PLUGINS------------------------------------------------------------------
  ---------------------------------------------------------------------------- */
-var gulp         = require('gulp'),
-    plumber      = require('gulp-plumber'),
-    pug          = require('gulp-pug'),
-    twig         = require('gulp-twig'),
+var gulp = require('gulp'),
+    plumber = require('gulp-plumber'),
+    pug = require('gulp-pug'),
+    twig = require('gulp-twig'),
     htmlbeautify = require('gulp-html-beautify'),
-    sass         = require("gulp-sass"),
-    prefix       = require("gulp-autoprefixer"),
-    minifyCss    = require('gulp-minify-css'),
-    uglify       = require('gulp-uglify'),
-    sourcemaps   = require("gulp-sourcemaps"),
-    callback     = require('gulp-callback'),
-    clean        = require('gulp-clean'),
-    notify       = require('gulp-notify'),
-    browserSync  = require('browser-sync'),
-    compass      = require('gulp-compass');
+    sass = require("gulp-sass"),
+    prefix = require("gulp-autoprefixer"),
+    minifyCss = require('gulp-minify-css'),
+    uglify = require('gulp-uglify'),
+    sourcemaps = require("gulp-sourcemaps"),
+    callback = require('gulp-callback'),
+    clean = require('gulp-clean'),
+    notify = require('gulp-notify'),
+    browserSync = require('browser-sync'),
+    compass = require('gulp-compass');
 
 /* PRODUCTION PLUGINS ----------------------------------------------------------
  ---------------------------------------------------------------------------- */
-var useref       = require('gulp-useref'),
-    wiredep      = require('wiredep').stream,
-    gulpif       = require('gulp-if');
+var useref = require('gulp-useref'),
+    wiredep = require('wiredep').stream,
+    gulpif = require('gulp-if');
 
 /* SOURCES --------------------------------------------------------------------
  ---------------------------------------------------------------------------- */
@@ -69,7 +69,7 @@ var sources = {
 /* Error Handler ---------------------------------------------------------------
  ---------------------------------------------------------------------------- */
 
-var onError = function(err) {
+var onError = function (err) {
     console.log(err);
     this.emit('end');
 };
@@ -94,21 +94,18 @@ gulp.task('twig', function () {
         .pipe(plumber({
             errorHandler: onError
         }))
-        .pipe(twig())
-        .pipe(gulp.dest(sources.twig.temp_dist))
-        .pipe(callback(function () {
-            gulp.src(sources.twig.temp_dist_html)
-                .pipe(htmlbeautify())
-                .pipe(gulp.dest(sources.twig.dist))
-                /*.pipe(callback(function () {
-                 setTimeout(function () {
-                 gulp.src(sources.twig.temp_dist, {read: false})
-                 .pipe(clean());
-                 }, 1000);
-                 }))*/
-                .pipe(browserSync.reload({stream: true}));
-            // .pipe(notify('TWIG was compiled'));
-        }));
+        .pipe(twig({
+            data: {
+                benefits: [
+                    'Fast',
+                    'Flexible',
+                    'Secure'
+                ]
+            }
+        }))
+        .pipe(gulp.dest(sources.html.dist))
+        .pipe(browserSync.reload({stream: true}));
+
 
     return null;
 });
@@ -129,7 +126,7 @@ gulp.task('compass', function () {
 });
 
 /* SASS --------------------------------------------------------------------- */
-gulp.task('sass', ["compass"], function() {
+gulp.task('sass', ["compass"], function () {
     return gulp.src(sources.sass.src)
         .pipe(plumber({
             errorHandler: onError
@@ -166,7 +163,7 @@ gulp.task('browser-sync', function () {
  ---------------------------------------------------------------------------- */
 
 /* SFTP --------------------------------------------------------------------- */
-gulp.task('sftp', function(){
+gulp.task('sftp', function () {
     gulp.src("dist/**/*")
         .pipe(sftp({
             host: "",
@@ -177,13 +174,13 @@ gulp.task('sftp', function(){
 });
 
 /* CLEAN -------------------------------------------------------------------- */
-gulp.task('clean', function(){
+gulp.task('clean', function () {
     gulp.src('dist', {read: false})
         .pipe(clean());
 });
 
 /* BUILD -------------------------------------------------------------------- */
-gulp.task('build',["clean"], function(){
+gulp.task('build', ["clean"], function () {
     setTimeout(function () {
         gulp.start('build_dist');
         gulp.start('fonts');
@@ -191,7 +188,7 @@ gulp.task('build',["clean"], function(){
     }, 500);
 });
 
-gulp.task('build_dist', function(){
+gulp.task('build_dist', function () {
     gulp.src(sources.html.src)
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))

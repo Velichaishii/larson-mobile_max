@@ -19,6 +19,8 @@ var LARSON = (function () {
         _self.countdown('.counter-signature');
         _self.upButton('.upButton');
         _self.initSwitcher();
+
+        _self.honorsGrid('.honor__grid');
     };
 
     // Window load types (loading, dom, full)
@@ -109,6 +111,14 @@ var LARSON = (function () {
         } catch (e) {
             return false;
         }
+    };
+
+    LARSON.prototype.honorsGrid = function (className) {
+        $(className).owlCarousel({
+            items: 2,
+            autoplay: true,
+            loop: true
+        });
     };
 
     LARSON.prototype.options = function (string) {
